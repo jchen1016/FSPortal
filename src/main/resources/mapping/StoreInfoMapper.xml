@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.decathlon.finance.taxreport.mapper.StoreInfoMapper">
+  <resultMap id="BaseResultMap" type="com.decathlon.finance.taxreport.model.StoreInfo">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="store_no" jdbcType="BIGINT" property="storeno" />
+    <result column="store_name" jdbcType="VARCHAR" property="storename" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, store_no, store_name
+  </sql>
+  <insert id="insert" parameterType="com.decathlon.finance.taxreport.model.StoreInfo">
+    insert into t_store_info (id, store_no, store_name
+      )
+    values (#{id,jdbcType=INTEGER}, #{storeno,jdbcType=BIGINT}, #{storename,jdbcType=VARCHAR}
+      )
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.decathlon.finance.taxreport.model.StoreInfo">
+    insert into t_store_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="storeno != null">
+        store_no,
+      </if>
+      <if test="storename != null">
+        store_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="storeno != null">
+        #{storeno,jdbcType=BIGINT},
+      </if>
+      <if test="storename != null">
+        #{storename,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="selectAllStoreInfo" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_store_info
+  </select>
+</mapper>

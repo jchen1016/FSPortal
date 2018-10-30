@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.decathlon.finance.taxreport.mapper.FiscalInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.decathlon.finance.taxreport.model.FiscalInfo" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="fiscal_no" property="fiscalno" jdbcType="BIGINT" />
+    <result column="fiscal_name" property="fiscalname" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fiscal_no, fiscal_name
+  </sql>
+  <insert id="insert" parameterType="com.decathlon.finance.taxreport.model.FiscalInfo" >
+    <selectKey keyProperty="id" resultType="int" order="BEFORE">
+      SELECT nextval('t_fiscal_info_id_seq'::regclass) as id
+    </selectKey>
+    insert into t_fiscal_info (id, fiscal_no, fiscal_name
+      )
+    values (#{id}, #{fiscalno,jdbcType=BIGINT}, #{fiscalname,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.decathlon.finance.taxreport.model.FiscalInfo" >
+    <selectKey keyProperty="id" resultType="int" order="BEFORE">
+      SELECT nextval('t_fiscal_info_id_seq'::regclass) as id
+    </selectKey>
+    insert into t_fiscal_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      id,
+      <if test="fiscalno != null" >
+        fiscal_no,
+      </if>
+      <if test="fiscalname != null" >
+        fiscal_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+        #{id},
+      <if test="fiscalno != null" >
+        #{fiscalno,jdbcType=BIGINT},
+      </if>
+      <if test="fiscalname != null" >
+        #{fiscalname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from t_fiscal_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAllFiscalInfo" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_fiscal_info
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_fiscal_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <update id="updateByPrimaryKeySelective" parameterType="com.decathlon.finance.taxreport.model.FiscalInfo" >
+    update t_fiscal_info
+    <set >
+      <if test="fiscalno != null" >
+        fiscal_no = #{fiscalno,jdbcType=BIGINT},
+      </if>
+      <if test="fiscalname != null" >
+        fiscal_name = #{fiscalname,jdbcType=VARCHAR}
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.decathlon.finance.taxreport.model.FiscalInfo" >
+    update t_fiscal_info
+    set fiscal_no = #{fiscalno,jdbcType=BIGINT},
+      fiscal_name = #{fiscalname,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,46 @@
+
+# ????
+server:
+  port: 8080
+
+#?????
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 50MB
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/taxReport
+    username: postgres
+    password: 123456
+    druid:
+      #???????a
+      initial-size: 8
+      #???????
+      min-idle: 5
+      #?????
+      max-active: 10
+      #??????
+      query-timeout: 6000
+      #????????
+      transaction-query-timeout: 6000
+      #??????????
+      remove-abandoned-timeout: 1800
+      filters: stat,config
+
+#mybatis
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+
+profiles:
+    active: dev
+
+#pagehelper????
+pagehelper:
+    helperDialect: postgresql
+    reasonable: true
+    supportMethodsArguments: true
+    #params: count=countSql
