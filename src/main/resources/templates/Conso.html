@@ -29,7 +29,6 @@
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/jquery.jqcandlestick.min.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
-<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script>
 <script src="js/jquery.slimscroll.min.js"></script>
 <script src="js/core.min.js"></script>	
 <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
@@ -46,19 +45,18 @@
 <!--//end-smoth-scrolling-->
 </head>
 <body style="background-color: #F3F3F3">
-	<div class="head_bg">
-		<div class="navbar-top">
+			<div class="navbar-top">
 			<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">
-	        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding:0px 15px" ><i class="fa fa-comments-o fa-2x" style="line-height: 31px;font-weight:500"></i></a>
+	        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+					<i class="fa fa-comments-o fa-2x" style="line-height:31px;font-weight:500"></i></a>
 			</li>
 			<li class="dropdown">
-	        	<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown" style="padding:0px 15px" ><img src="images/1.png"></a>
+	        	<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img id="user-photo" src="images/Luyao.jpg"></a>
 	        	<ul class="dropdown-menu">
-					<li class="m_2"><a href="#"><i class="fa fa-user"></i> Profile</a></li>
-					<li class="m_2"><a href="#"><i class="fa fa-wrench"></i> Settings</a></li>
-					<li class="m_2"><a href="#"><i class="fa fa-shield"></i> Lock Profile</a></li>
-					<li class="m_2"><a href="#"><i class="fa fa-lock"></i> Logout</a></li>	
+					<li><a href="#"><i class="fa fa-angle-right"></i> Profile</a></li>
+					<li><a href="testmonials.html"><i class="fa fa-angle-right"></i> Settings</a></li>
+					<li><a href="log.html"><i class="fa fa-angle-right"></i> Logout</a></li>	
 	        	</ul>
 	      	</li>
 			</ul>
@@ -66,9 +64,9 @@
              <input type="text" class="form-control" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
             </form>
 	    </div>
-		<div class="wrap">
+		<div>
 			<div class="logo">
-				<a href="index.html" style="color:#23b7e5;padding:5px">Finance</a><a href="index.html" style="color:#B1E5F5;padding:5px">& Solution</a>
+				<a href="home" style="color:#23b7e5;padding:5px">Finance</a><a href="home" style="color:#B1E5F5;padding:5px">& Solution</a>
 			</div> 
 			<div class="header">
 				<div class="h_left">	
@@ -76,28 +74,23 @@
 				<div class="dropdown" style="top:-16px" ><a id="main-menu-toggle" class="hidden-phone open"><i class="fa fa-bars"></i></a></div>
 				<div class="dropdown">
 				  <li>
-					<a href="AP.html">AP</a>
-					<!--<div class="dropdown-content" style="width: 100px">
-      					<a href="#" style="padding-left:0;padding-right:0;border:#eee;line-height: 20px">Tax report</a>
-   						<a href="#"  style="padding-left:0;padding-right:0;border:#eee;line-height: 20px">XXX</a>
-      					<a href="#"  style="padding-left:0;padding-right:0;border:#eee;line-height: 20px">XXX</a>
-    				</div>-->
+					<a href="#">AP</a>
 				  </li>
 				</div>
 				<div class="dropdown">
-					<li><a href="Conso.html">Conso</a></li>
+					<li><a href="conso">Conso</a></li>
 				</div>
 				<div class="dropdown">
-					<li><a href="GL.html">GL</a></li>
+					<li><a href="gl">GL</a></li>
 				</div>
 				<div class="dropdown">
-					<li><a href="Tax.html">Tax</a></li>
+					<li><a href="tax">Tax</a></li>
 				</div>
 				<div class="dropdown">
-					<li><a href="RPA.html">RPA</a></li>
+					<li><a href="rpa">RPA</a></li>
 				</div>
 				<div class="dropdown">
-					<li><a href="Datalake.html">Datalake</a></li>
+					<li><a href="datalake">Datalake</a></li>
 				</div>
 					
 				</ul>
@@ -107,69 +100,60 @@
 				
 				
 				
-				
-					<aside class="sidebar" id="sidebar-left">
-				<div class="top-nav sidebar-scroll" id="leftside-navigation">
+				<!--//side-bar-->
+				<aside class="sidebar" id="sidebar-left">
+				<div id="leftside-navigation">
 					<div id="slimScrollDiv">
-					<nav>
 					<div class="nav1">
-						<ul class=" nav nav-sidebar">
+						<ul class="nav nav-sidebar">
 							<li class="sub-menu">
-								<a href="index.html#dashboard">
+								<a href="#dashboard">
 									<i class="fa fa-laptop" style="color:#5D9CEC"></i><span class="text"> Dashboard</span><span class="fa fa-angle-down pull-right"></span></a>
 								<ul>
          						 <li><a href="#">Shrinkage report</a></li>
 								 <li><a href="#">Sales / To</a></li>
         						</ul>
 							</li>
-							 <li>
-								<a href="index.html#about"><i class="fa fa-file-text" style="color:#4FC1E9" ></i><span class="text">  Newsletter</span></a>
+							 <li class="sub-menu">
+								<a href="#about"><i class="fa fa-file-text" style="color:#4FC1E9" ></i><span class="text">  Newsletter</span><span class="fa fa-angle-down pull-right"></span></a>
+								 <ul>
+         						 <li><a href="news1.html">Sport1</a></li>
+								 <li><a href="news2.html">Sport2</a></li>
+							     <li><a href="news3.html">Sport3</a></li>
+						         <li><a href="news4.html">Sport4</a></li>
+        						</ul>
       						</li>
-							
 							<li>
-								<a href="index.html#team"><i class="fa fa-list-alt" style="color:#48CFAD"></i><span class="text"> F&S team</span> </a>
+								<a href="#team"><i class="fa fa-list-alt" style="color:#48CFAD"></i><span class="text"> F&S team</span> </a>
 							</li>
 							<li class="sub-menu">
 								<a href="#">
 									<i class="fa fa-table" style="color:#A0D468"></i><span class="text"> Useful link</span><span class="fa fa-angle-down pull-right"></span></a>
 								<ul>
-         						 <li><a href="#">Ticket</a></li>
+         						 <li><a href="https://support.decathlon.com/dashboard?TENANTID=157222659">Ticket</a></li>
 								 <li><a href="#">Website</a></li>
         						</ul>
 							</li>
 							<li>
-								<a href="index.html#contact"><i class="fa fa-signal" style="color:#FFCE54"></i><span class="text"> Contact us</span> </a>
+								<a href="#contact"><i class="fa fa-signal" style="color:#FFCE54"></i><span class="text"> Contact us</span> </a>
 							</li>
 							<li>
 								<a href="#"><i class="fa fa-briefcase" style="color:#FC6E51"></i><span class="text"> UI Features</span> <span class="fa fa-angle-down pull-right"></span></a>
-								
 							</li>
 							<li><a href="widgets.html"><i class="fa fa-retweet" style="color:#ED5565"></i><span class="text"> Widgets</span></a></li>
 							<li><a href="typography.html"><i class="fa fa-font" style="color:#AC92EC"></i><span class="text"> Typography</span></a></li>
 							<li>
 								<a href="#"><i class="fa fa-bolt" style="color:#EC87C0"></i><span class="text"> Icons</span> <span class="fa fa-angle-down pull-right"></span></a>
-								
 							</li>
 							<li><a href="gallery.html"><i class="fa fa-picture-o" style="color:#5D9CEC"></i><span class="text"> Gallery</span></a></li>							
 							<li><a href="calendar.html"><i class="fa fa-calendar" style="color:#4FC1E9"></i><span class="text"> Calendar</span></a></li>
 						</ul>
 					</div>	
-					<!-- script-for-menu -->
-						 <script>
-						   $( "span.menu-icon" ).click(function() {
-							 $( ".nav1" ).slideToggle( 300, function() {
-							 // Animation complete.
-							  });
-							 });
-						</script>
-					<!-- /script-for-menu --></nav></div>
+						 </div>
 					</div></aside>
-				<div class="clearfix"> </div>				
+				<div class="clearfix"> </div>			
 				
-			</div>
-				<div class="clearfix"> </div>				
-				
-			</div>
+			
 				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 span10 main" id="content" style="margin-left:15%">
 					<div class="about">
 					 <h3 style="font-size: 15px"></i>Conso</h3>
@@ -179,13 +163,13 @@
 						<div class="main-text">
 			 
 						
-						 <div class="row" style="margin:20px 0">
+						 <div class="row" style="margin: 20px 0px 20px 20px">
 				
                  
-                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style="padding: 0;">
 					  <a href="#">
-                      <div class="div-square">
- 						<img src="images/manual inject.png" style="width:55px" alt=""/>
+                      <div class="div-square shadow2">
+ 						<img src="images/manual inject.png" alt=""/>
                       <h5>Manual inject</h5>
 						  </a>
                       </div>

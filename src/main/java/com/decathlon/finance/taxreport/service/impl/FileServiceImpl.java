@@ -1,65 +1,28 @@
 package com.decathlon.finance.taxreport.service.impl;
 
+import com.decathlon.finance.taxreport.config.CustomConfigUtils;
 import com.decathlon.finance.taxreport.service.FileService;
 import com.decathlon.finance.taxreport.util.Constants;
 import com.decathlon.finance.taxreport.util.ExcelUtil;
+import com.decathlon.finance.taxreport.util.FileUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 @Service(value = "fileService")
 public class FileServiceImpl implements FileService {
 
-    //删除文件夹
-//param folderPath 文件夹完整绝对路径
-
-    private void delFolder(String folderPath) {
-        try {
-            delAllFile(folderPath); //删除完里面所有内容
-            String filePath = folderPath;
-            filePath = filePath.toString();
-            java.io.File myFilePath = new java.io.File(filePath);
-            myFilePath.delete(); //删除空文件夹
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private boolean delAllFile(String path) {
-        boolean flag = false;
-        File file = new File(path);
-        if (!file.exists()) {
-            return flag;
-        }
-        if (!file.isDirectory()) {
-            return flag;
-        }
-        String[] tempList = file.list();
-        File temp = null;
-        for (int i = 0; i < tempList.length; i++) {
-            if (path.endsWith(File.separator)) {
-                temp = new File(path + tempList[i]);
-            } else {
-                temp = new File(path + File.separator + tempList[i]);
-            }
-            if (temp.isFile()) {
-                temp.delete();
-            }
-            if (temp.isDirectory()) {
-                delAllFile(path + "/" + tempList[i]);//先删除文件夹里面的文件
-                delFolder(path + "/" + tempList[i]);//再删除空文件夹
-                flag = true;
-            }
-        }
-        return flag;
-    }
+    @Autowired
+    private CustomConfigUtils config;
 
     @Override
-    public String fileUpload(MultipartFile file, String path) throws IOException {
-
+    public String fileUpload(MultipartFile file, String path, String targetFileName, boolean needConverExcel) throws IOException {
         if (file.isEmpty()) {
             return null;
         }
@@ -71,10 +34,15 @@ public class FileServiceImpl implements FileService {
         if (!dest.getParentFile().exists()) { //判断文件父目录是否存在
             dest.getParentFile().mkdirs();
         } else {
-            delAllFile(dest.getParentFile().getPath());
+            FileUtils.delAllFile(dest.getParentFile().getPath());
         }
         file.transferTo(dest); //保存文件
-        return dest.getName();
+        if(needConverExcel)
+        {
+            ConvertToAvailableExcel(path,fileName,targetFileName);
+            fileName = targetFileName;
+        }
+        return fileName;
     }
 
     @Override
@@ -82,5 +50,10 @@ public class FileServiceImpl implements FileService {
         String headers[] = {"Fiscal NO", "Fiscal Name", "Store No", "Store Name"};
         ExcelUtil eU = new ExcelUtil();
         eU.exportMainDataExcel("companyInfo", headers, null, response);
+    }
+
+    private void ConvertToAvailableExcel(String filePath, String originalfileName,String targetFileName) throws IOException {
+        String [] cmd={"wscript",config.getPath()+Constants.VBS_CONVERT,filePath,originalfileName,targetFileName};
+        Runtime.getRuntime().exec(cmd);
     }
 }

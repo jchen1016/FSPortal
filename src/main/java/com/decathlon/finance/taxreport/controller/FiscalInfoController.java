@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/fiscals")
+@RequestMapping(value="/api/fiscals")
 public class FiscalInfoController {
 
     @Autowired
@@ -25,7 +25,7 @@ public class FiscalInfoController {
     @ResponseBody
     @RequestMapping(value = "/getAll", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
     @ApiOperation(value = "get all fiscal info", notes = "get all fiscal info", httpMethod = "GET")
-    public List<FiscalInfo> addUser() {
+    public List<FiscalInfo> getAllFiscalInfo() {
         return fiscalInfoService.getAllFiscalInfo();
     }
 

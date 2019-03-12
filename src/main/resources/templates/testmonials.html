@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home</title>
+<title>Settings</title>
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/font-awesome.css" rel="stylesheet"  media="all">
+
 	
 <!--web-font-->
 	
@@ -24,12 +25,13 @@
 <!-- //js -->	
 <!-- start-smoth-scrolling-->
 <script src="js/echarts.min.js"></script>
+<script type="text/javascript" src="js/team.js"></script>
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/jquery.jqcandlestick.min.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
-<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script>
-	<script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
-	<script type="text/javascript" src="js/plugins.js"></script>
+<script src="js/jquery.slimscroll.min.js"></script>
+<script src="js/core.min.js"></script>	
+<script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		
@@ -42,530 +44,425 @@
 
 <!--//end-smoth-scrolling-->
 </head>
-<body>
-			<div class="head_bg">
+<body  style="background-color: #F3F3F3">
 				<div class="navbar-top">
-				<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-	        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding:0px 15px" ><i class="fa fa-comments-o fa-2x" style="line-height: 31px;"></i></a>
-				</li>
-					<li class="dropdown">
-	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown" style="padding:0px 15px" ><img src="images/1.png"></a>
-	        		<ul class="dropdown-menu">
-						
-						<li class="m_2"><a href="#"><i class="fa fa-user"></i> Profile</a></li>
-						<li class="m_2"><a href="#"><i class="fa fa-wrench"></i> Settings</a></li>
-						<li class="m_2"><a href="#"><i class="fa fa-shield"></i> Lock Profile</a></li>
-						<li class="m_2"><a href="#"><i class="fa fa-lock"></i> Logout</a></li>	
-	        		</ul>
-	      		</li>
+			<ul class="nav navbar-nav navbar-right">
+			<li class="dropdown">
+	        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+					<i class="fa fa-comments-o fa-2x" style="line-height:31px;font-weight:500"></i></a>
+			</li>
+			<li class="dropdown">
+	        	<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img id="user-photo" src="images/Luyao.jpg"></a>
+	        	<ul class="dropdown-menu">
+					<li><a href="#"><i class="fa fa-angle-right"></i> Profile</a></li>
+					<li><a href="testmonials.html"><i class="fa fa-angle-right"></i> Settings</a></li>
+					<li><a href="log.html"><i class="fa fa-angle-right"></i> Logout</a></li>	
+	        	</ul>
+	      	</li>
 			</ul>
-				<form class="navbar-form navbar-right">
-              <input type="text" class="form-control" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
+		    <form class="navbar-form navbar-right">
+             <input type="text" class="form-control" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
             </form>
+	    </div>
+		<div>
+			<div class="logo">
+				<a href="home" style="color:#23b7e5;padding:5px">Finance</a><a href="index.html" style="color:#B1E5F5;padding:5px">& Solution</a>
+			</div> 
+			<div class="header">
+				<div class="h_left">	
+				<ul class="menutop">
+				<div class="dropdown" style="top:-16px" ><a id="main-menu-toggle" class="hidden-phone open"><i class="fa fa-bars"></i></a></div>
+				<div class="dropdown">
+				  <li>
+					<a href="AP.html">AP</a>
+				  </li>
 				</div>
-				<div class="wrap">
-					<div class="logo">
-							<a href="index.html" style="color:rgb(6, 217, 149);padding:5px">Finance</a><a href="index.html" style="color:#357B57;padding:5px">& Solution</a>
-						</div> 
-					<div class="header">
-						<div class="h_left">
-							<ul class="menutop">
-								<div class="dropdown">
-								<li>
-									<a href="AP.html">AP</a>
-									<div class="dropdown-content" style="width: 100px">
-      									<a href="#" style="padding-left:0;padding-right:0;border:#eee;line-height: 20px">Tax report</a>
-   									    <a href="#"  style="padding-left:0;padding-right:0;border:#eee;line-height: 20px">XXX</a>
-      									<a href="#"  style="padding-left:0;padding-right:0;border:#eee;line-height: 20px">XXX</a>
-    								 </div>
-								</li>
-								</div>
-								<div class="dropdown"><li>
-									<a href="index.html">GL</a>
-									
-								</li></div>
-								<div class="dropdown"><li>
-									<a href="#">Tax</a>
-									 
-								</li></div>
-								<div class="dropdown"  >
-								<li>
-									<a href="services.html">AP</a>
-									
-								</li>
-								</div>
-								<div class="dropdown"><li>
-									<a href="index.html">GL</a>
-								
-								</li></div>
-								<div class="dropdown"><li>
-									<a href="#">Tax</a>
-									
-								</li></div>
-								<div class="dropdown"  >
-								<li>
-									<a href="services.html">AP</a>
-									
-								</li>
-								</div>
-								<div class="dropdown"><li>
-									<a href="index.html">GL</a>
-									
-								</li></div>
-								<div class="dropdown"><li>
-									<a href="#">Tax</a>
-									
-								</li></div>
-							</ul>
+				<div class="dropdown">
+					<li><a href="Conso.html">Conso</a></li>
+				</div>
+				<div class="dropdown">
+					<li><a href="GL.html">GL</a></li>
+				</div>
+				<div class="dropdown">
+					<li><a href="Tax.html">Tax</a></li>
+				</div>
+				<div class="dropdown">
+					<li><a href="RPA.html">RPA</a></li>
+				</div>
+				<div class="dropdown">
+					<li><a href="Datalake.html">Datalake</a></li>
+				</div>
+					
+				</ul>
 	        			</div>
 					</div>
 				</div>
-			<div class="sidebar">
-				<div class="top-nav">
+				
+				
+				
+				<!--//side-bar-->
+				<aside class="sidebar" id="sidebar-left">
+				<div id="leftside-navigation">
+					<div id="slimScrollDiv">
 					<div class="nav1">
-						<ul class=" nav nav-sidebar">
-							<li><a href="#dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-							<li><a href="#about"><i class="fa fa-team"></i>Our Team</a></li>
-							<li><a href="navigation.html"><i class="fa fa-project"></i>Navigation</a></li>
-							<li><a href="testmonials.html"><i class="fa fa-tools"></i>Tools & Links</a></li>
-							<li><a href="#contact"><i class="fa fa-contact"></i>Contact</a></li>
-							<li><a href="#dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-							<li><a href="#about"><i class="fa fa-team"></i>Our Team</a></li>
-							<li><a href="#project"><i class="fa fa-project"></i>Team Project</a></li>
-							<li><a href="#testmonials"><i class="fa fa-tools"></i>Tools & Links</a></li>
-							<li><a href="#contact"><i class="fa fa-contact"></i>Contact</a></li>
+						<ul class="nav nav-sidebar">
+							<li class="sub-menu">
+								<a href="#dashboard">
+									<i class="fa fa-laptop" style="color:#5D9CEC"></i><span class="text"> Dashboard</span><span class="fa fa-angle-down pull-right"></span></a>
+								<ul>
+         						 <li><a href="#">Shrinkage report</a></li>
+								 <li><a href="#">Sales / To</a></li>
+        						</ul>
+							</li>
+							 <li class="sub-menu">
+								<a href="#about"><i class="fa fa-file-text" style="color:#4FC1E9" ></i><span class="text">  Newsletter</span><span class="fa fa-angle-down pull-right"></span></a>
+								 <ul>
+         						 <li><a href="news1.html">Sport1</a></li>
+								 <li><a href="news2.html">Sport2</a></li>
+							     <li><a href="news3.html">Sport3</a></li>
+						         <li><a href="news4.html">Sport4</a></li>
+        						</ul>
+      						</li>
+							<li>
+								<a href="#team"><i class="fa fa-list-alt" style="color:#48CFAD"></i><span class="text"> F&S team</span> </a>
+							</li>
+							<li class="sub-menu">
+								<a href="#">
+									<i class="fa fa-table" style="color:#A0D468"></i><span class="text"> Useful link</span><span class="fa fa-angle-down pull-right"></span></a>
+								<ul>
+         						 <li><a href="https://support.decathlon.com/dashboard?TENANTID=157222659">Ticket</a></li>
+								 <li><a href="#">Website</a></li>
+        						</ul>
+							</li>
+							<li>
+								<a href="#contact"><i class="fa fa-signal" style="color:#FFCE54"></i><span class="text"> Contact us</span> </a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-briefcase" style="color:#FC6E51"></i><span class="text"> UI Features</span> <span class="fa fa-angle-down pull-right"></span></a>
+							</li>
+							<li><a href="widgets.html"><i class="fa fa-retweet" style="color:#ED5565"></i><span class="text"> Widgets</span></a></li>
+							<li><a href="typography.html"><i class="fa fa-font" style="color:#AC92EC"></i><span class="text"> Typography</span></a></li>
+							<li>
+								<a href="#"><i class="fa fa-bolt" style="color:#EC87C0"></i><span class="text"> Icons</span> <span class="fa fa-angle-down pull-right"></span></a>
+							</li>
+							<li><a href="gallery.html"><i class="fa fa-picture-o" style="color:#5D9CEC"></i><span class="text"> Gallery</span></a></li>							
+							<li><a href="calendar.html"><i class="fa fa-calendar" style="color:#4FC1E9"></i><span class="text"> Calendar</span></a></li>
+						</ul>
 					</div>	
-					<!-- script-for-menu -->
-						 <script>
-						   $( "span.menu-icon" ).click(function() {
-							 $( ".nav1" ).slideToggle( 300, function() {
-							 // Animation complete.
-							  });
-							 });
-						</script>
-						<!-- /script-for-menu -->
-				</div>
-				<div class="clearfix"> </div>				
-				
-			</div>
+						 </div>
+					</div></aside>
+				<div class="clearfix"> </div>			
+	
+	
 			<!--//side-bar-->
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 about-main" id="dashboard">
-					<div class="main-text">
-					<div class="about">
-					 <h3><i class="fa fa-dashboard fa-1x" style="color: rgb(6, 217, 149)"></i>Dashboard</h3>
-					</div>
-						<div class="row four-grids">
-					<div class="col-md-3 ticket-grid">
-						<div class="tickets">
-							<div class="grid-left">
-								<div class="book-icon">
-									<i class="fa fa-book"></i>
-								</div>
-							</div>
-							<div class="grid-right">
-								<h3>Tickets <span>Answered</span></h3>
-								<p>452</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div class="col-md-3 ticket-grid">
-						<div class="tickets">
-							<div class="grid-left">
-								<div class="book-icon">
-									<i class="fa fa-rocket"></i>
-								</div>
-							</div>
-							<div class="grid-right">
-								<h3>New <span>Projects</span></h3>
-								<p>745</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div class="col-md-3 ticket-grid">
-						<div class="tickets">
-							<div class="grid-left">
-								<div class="book-icon">
-									<i class="fa fa-bar-chart"></i>
-								</div>
-							</div>
-							<div class="grid-right">
-								<h3>Our <span>Status</span></h3>
-								<p>125</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div class="col-md-3 ticket-grid">
-						<div class="tickets">
-							<div class="grid-left">
-								<div class="book-icon">
-									<i class="fa fa-user"></i>
-								</div>
-							</div>
-							<div class="grid-right">
-								<h3>Daily <span>Visitors</span></h3>
-								<p>7462</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-							<div class="clearfix"> </div></div>
-			
-						<div class="row">
-						 <div class="col-md-5">
-       		<div class="panel panel-widget">
-							<div class="panel-title">
-							  Lines and points
-							  <ul class="panel-tools">
-								<li><a class="icon minimise-tool"><i class="fa fa-minus"></i></a></li>
-								<li><a class="icon expand-tool"><i class="fa fa-expand"></i></a></li>
-								<li><a class="icon closed-tool"><i class="fa fa-times"></i></a></li>
-							  </ul>
-							</div>
-							<div class="panel-body">
-								<div class="lines-points">
-									<div id="example-4" class="jqcandlestick-container">
-									
-									<script type="text/javascript">
-										  // Generate data
-										  
-										  var data = [];
-										  
-										  var time = new Date('Dec 1, 2013 12:00').valueOf();
-										  
-										  var h = Math.floor(Math.random() * 100);
-										  var l = h - Math.floor(Math.random() * 20);
-										  var o = h - Math.floor(Math.random() * (h - l));
-										  var c = h - Math.floor(Math.random() * (h - l));
-
-										  var v = Math.floor(Math.random() * 1000);
-										  
-										  for (var i = 0; i < 30; i++) {
-											data.push([time, o, h, l, c, v]);
-											h += Math.floor(Math.random() * 10 - 5);
-											l = h - Math.floor(Math.random() * 20);
-											o = h - Math.floor(Math.random() * (h - l));
-											c = h - Math.floor(Math.random() * (h - l));
-											v += Math.floor(Math.random() * 100 - 50);
-											time += 30 * 60000; // Add 30 minutes
-										  }
-										</script>
-									<script type="text/javascript">
-									  $(function() {
-										$('#example-4').jqCandlestick({
-										  data: data,
-										  theme: 'light',
-										  series: [{
-											type: 'line',
-										  }, {
-											type: 'point',
-										  }],
-										});
-									  });
-									</script>
-								</div>
-							</div>
-						</div>
-							 </div></div>
-					
-						
-							<div class="col-md-7">
-							<div class="panel panel-widget">
-								<div class="panel-title">
-							  Bar
-							  <ul class="panel-tools">
-								<li><a class="icon minimise-tool"><i class="fa fa-minus"></i></a></li>
-								<li><a class="icon expand-tool"><i class="fa fa-expand"></i></a></li>
-								<li><a class="icon closed-tool"><i class="fa fa-times"></i></a></li>
-							  </ul>
-							</div>
-		
-								<div class="panel-body">
-									<div id="bar" class="jqcandlestick-container">
-									<script type="text/javascript">
-									var myChart = echarts.init(document.getElementById('bar'));
-									var xAxisData = [];
-var data1 = [];
-var data2 = [];
-var data3 = [];
-var data4 = [];
-
-for (var i = 0; i < 10; i++) {
-    xAxisData.push('Class' + i);
-    data1.push((Math.random() * 2).toFixed(2));
-    data2.push(-Math.random().toFixed(2));
-    data3.push((Math.random() * 5).toFixed(2));
-    data4.push((Math.random() + 0.3).toFixed(2));
-}
-
-var itemStyle = {
-    normal: {
-    },
-    emphasis: {
-        barBorderWidth: 1,
-        shadowBlur: 10,
-        shadowOffsetX: 0,
-        shadowOffsetY: 0,
-        shadowColor: 'rgba(0,0,0,0.5)'
-    }
-};
-
-var option = {
-    backgroundColor: '#fff',
-    legend: {
-        data: ['bar', 'bar2', 'bar3', 'bar4'],
-        align: 'left',
-        left: 10
-    },
-    brush: {
-        toolbox: ['rect', 'polygon', 'lineX', 'lineY', 'keep', 'clear'],
-        xAxisIndex: 0
-    },
-    toolbox: {
-        feature: {
-            magicType: {
-                type: ['stack', 'tiled']
-            },
-            dataView: {}
-        }
-    },
-    tooltip: {},
-    xAxis: {
-        data: xAxisData,
-        name: 'X Axis',
-        silent: false,
-        axisLine: {onZero: true},
-        splitLine: {show: false},
-        splitArea: {show: false}
-    },
-    yAxis: {
-        inverse: true,
-        splitArea: {show: false}
-    },
-    grid: {
-        left: 100
-    },
-    visualMap: {
-        type: 'continuous',
-        dimension: 1,
-        text: ['High', 'Low'],
-        inverse: true,
-        itemHeight: 200,
-        calculable: true,
-        min: -2,
-        max: 6,
-        top: 60,
-        left: 10,
-        inRange: {
-            colorLightness: [0.4, 0.8]
-        },
-        outOfRange: {
-            color: '#bbb'
-        },
-        controller: {
-            inRange: {
-                color: '#2f4554'
-            }
-        }
-    },
-    series: [
-        {
-            name: 'bar',
-            type: 'bar',
-            stack: 'one',
-            itemStyle: itemStyle,
-            data: data1
-        },
-        {
-            name: 'bar2',
-            type: 'bar',
-            stack: 'one',
-            itemStyle: itemStyle,
-            data: data2
-        },
-        {
-            name: 'bar3',
-            type: 'bar',
-            stack: 'two',
-            itemStyle: itemStyle,
-            data: data3
-        },
-        {
-            name: 'bar4',
-            type: 'bar',
-            stack: 'two',
-            itemStyle: itemStyle,
-            data: data4
-        }
-    ]
-};
-
-myChart.on('brushSelected', renderBrushed);
-
-function renderBrushed(params) {
-    var brushed = [];
-    var brushComponent = params.batch[0];
-
-    for (var sIdx = 0; sIdx < brushComponent.selected.length; sIdx++) {
-        var rawIndices = brushComponent.selected[sIdx].dataIndex;
-        brushed.push('[Series ' + sIdx + '] ' + rawIndices.join(', '));
-    }
-
-    myChart.setOption({
-        title: {
-            backgroundColor: '#333',
-            text: 'SELECTED DATA INDICES: \n' + brushed.join('\n'),
-            bottom: 0,
-            right: 0,
-            width: 100,
-            textStyle: {
-                fontSize: 12,
-                color: '#fff'
-            }
-        }
-    });
-}
-
-
-										 myChart.setOption(option);
-									</script>
-								</div>	
-								</div></div></div>
-					
-						</div></div></div>
-				<!--banner-->
-				<!--<div class="banner">
-					
-					<div class="jumbotron banner-text">
-						<h3>Finance & Solution</h3>
-						<p>introduction</p>
-						<a class="btn btn-primary" href="#" role="button">Read more</a>
-					</div></div>-->
-				<!--//banner-->
-				<!--main-text-->
-				<!--<div class="main-text">
-						<div class="col-md-4 offer-grids-info">
-							<img src="images/img2.jpg" alt=""/>	
-							<div class="offer-text">
-								<h5></h5>
-							</div>
-						</div>
-						<div class="col-md-4 offer-grids-info">
-							<img src="images/img3.jpg" alt=""/>	
-							<div class="offer-text">
-								<h5></h5>
-							</div>
-						</div>
-						<div class="col-md-4 offer-grids-info">
-							<img src="images/img13.jpg" alt=""/>	
-							<div class="offer-text">
-								<h5></h5>
-							</div>	
-						</div>
-						<div class="col-md-6 offer-grids-info off-grid2">
-							<img src="images/img4.jpg" alt=""/>	
-							<div class="offer-text">
-								<h5></h5>
-							</div>
-						</div>
-						<div class="col-md-6 offer-grids-info off-grid2">
-							<img src="images/img5.jpg" alt=""/>							
-							<div class="offer-text">
-								<h5></h5>
-							</div>
-						</div>
-					<div class="clearfix"> </div></div>-->
-									
-					<!--features-->
-				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 about-main" id="about">
-					<div class="offer-grids"><div class="main-text">
-					<div class="about">
-					 <h3><i class="fa fa-team fa-1x" style="color: rgb(6, 217, 149)"></i>Our Team</h3>
-					</div>
-						
-						<div class="in exhibition_hall">
-							<ul id="myRoundabout">
-								<li><img src="images/img1.png" alt=""></li>
-								<li><img src="images/img2.png" alt=""></li>
-								<li><img src="images/img3.png" alt=""></li>
-								<li><img src="images/img3.png" alt=""></li>
-							</ul>
-							<ul id="dots" class="switcher jQ_sliderSwitch">
-								<li><a href=""></a></li>
-								<li><a href=""></a></li>
-								<li><a href=""></a></li>
-								<li><a href=""></a></li>
-							</ul>
-							
-						 	
-							<div class="clear"></div>
-			           </div></div></div>
-				<!--<div class="about-slid">
-					<div class="abt-slid-text">
-						<h2>What we do</h2>
-						<p>The standard Lorem Ipsum passage, used sincepassage</p>
-					</div>
-				</div>-->
-					
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 span10 main" id="content" style="margin-left:15%">
+	
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 about-main span10" id="about">
+					<div class="offer-grids">
 				
-					<div class="offer-grids"><div class="main-text" id="member">
-				<div class="team">
-					<div class="team-text h3">team members</div>
-				<div class="team-info" >
-						<div class="col-sm-3 appsDevelopment">
+					 <h3><i class="fa fa-newspaper fa-1x" style="color:#23b7e5;font-weight: 500"></i>Newsletter</h3>
+					
+						<div id="banner-tab" class="flexslider">
+    <div class="slideBox"><a href="sport.html">
+        <ul class="slides">
+            <li><img width="960" height="540" src="images/sport1.jpg"></li>
+            <li><img width="960" height="540" src="images/sport2.jpg"></li>
+            <li><img width="960" height="540" src="images/sport3.jpg"></li>
+            <li><img width="960" height="540" src="images/sport5.jpg"></li>
+        </ul></a>
+    </div>
+
+    <ul class="flex-direction-nav">
+        <li disabled="true" class="prev"><</li>
+        <li class="next">></li>
+    </ul>
+    <ul id="bannerCtrl">
+        <li> </li>
+        <li> </li>
+        <li> </li>
+        <li> </li>
+    </ul>
+</div>
+							<div class="news-content-list">
+                    <table>
+                        <thead>
+                            <tr class="newhead">
+                                <th class="newhead-id">ID</th>
+                                <th class="newhead-title">title</th>
+                                <th class="newhead-content">content</th>
+                                <th class="newhead-imgurl">imgurl</th>
+                                <th class="operation">action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="news-content" class="news-content">
+							
+                        </tbody>
+
+                    </table>
+								<button class="button" style="margin: 30px;border: 0;"/>add news</button>
+                </div>
+					<div id="add-news" class="floatup"  style="display:none" >
+							<div class="addnews" style="height: auto">
+								<span class="close" id="close" style="opacity: 1"></span>
+								<div class="upload-top"><h3 style="text-align: center;font-size: 27px;padding-top:20px;color:white">Add a news</h3></div>
+							<input type="text" class="add-news" value="title" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'title';}"><br />
+								<textarea value="content" class="add-news" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'content';}" rows="8" >content</textarea><br/>
+								<input id="img_input" type="file" accept="image/*"/><label for="img_input" class="file_label" style="margin: 15px 15%">news image</label><br>
+								<button class="login" style="width: 30%;margin: 10px 10%;">confirm</button>
+								<button class="login" style="width: 30%;margin: 10px 10%;position:absolute">cancel</button>
+								<div id="newsimg"></div>
+							</div>
+							</div>
+					</div>
+							<div class="clear">
+							</div></div>
+	
+	
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 about-main span10" id="team">
+					<div class="offer-grids">
+				
+					 <h3><i class="fa fa-team fa-1x" style="color:#23b7e5"></i>F&S Team</h3>
+		<div class="cd-gallery-container">
+		<nav class="cd-filter">
+			<ul>
+				<li class="placeholder"> 
+					<a data-type="Manager" href="#0">Manager</a> <!-- selected option on mobile -->
+				</li> 
+
+				<li>
+					<a class="selected" data-type="Manager" href="#0">Manager</a>
+				</li>
+
+				<li>
+					<a data-type="support" href="#0">Support</a>
+					
+				</li>
+				
+				<li>
+					<a data-type="IT" href="#0">IT Finance</a>
+				</li>
+
+				<li>
+					<a data-type="digital" href="#0">Digital</a>
+				</li>
+			</ul>
+		</nav>
+			
+		<ul class="cd-gallery cd-container">
+			<li>
+				<ul class="cd-item-wrapper">
+					<li data-type="support" class="is-hidden ">
+					<a id="cretail" >Retail</a>
+					<a id="cCP" >Country opening</a>
+					<a id="cclifou" >Clifou</a>
+					</li>
+					
+					<li data-type="Manager" class="is-visible col-sm-3 appsDevelopment">
                                                 <div class="portfolio_single_content">
-                                                    <img src="images/img8.jpg" alt=""/>
+                                                   <img src="images/Yin LI.jpg" alt=""/>
                                                     <div>
-                                                        <a href="#">Developper</a>
-                                                        <span>Subtitle</span>
+                                                        <a href="#">Li YIN</a>
+                                                        <span>Digital Transformation<br />Financial Manager<br />Country Opening</span>
                                                     </div>
                                                 </div>
-                                            </div>
-						<div class="col-sm-3 appsDevelopment">
+					</li>
+					<li  data-type="support" class="is-hidden col-sm-3 appsDevelopment CP" style="padding-top:14px" >
                                                 <div class="portfolio_single_content">
-                                                    <img src="images/img9.jpg" alt=""/>
+                                                    <img src="images/Travis.jpg" alt=""/>
                                                     <div>
-                                                        <a href="#">Developper</a>
-                                                        <span>Subtitle</span>
+                                                        <a href="#">Travis ZHOU</a>
+                                                        <span>SAP expert<br />Country opening<br />Supply finance expert</span>
                                                     </div>
                                                 </div>
-                                            </div>
-						<div class="col-sm-3 appsDevelopment">
-                                                <div class="portfolio_single_content">
-                                                    <img src="images/img10.jpg" alt=""/>
+					</li>
+
+					<li data-type="IT" class="is-hidden col-sm-3 appsDevelopment">
+						<div class="portfolio_single_content">
+                                                    <img src="images/Amy CHEN.jpg" alt=""/>
                                                     <div>
-                                                        <a href="#">Developper</a>
-                                                        <span>Subtitle</span>
+                                                        <a href="#">Amy CHEN</a>
+                                                        <span>IT Finance leader<br />Finance flow responsible</span>
                                                     </div>
                                                 </div>
-                                            </div>
-						<div class="col-sm-3 appsDevelopment">
-                                                <div class="portfolio_single_content">
-                                                    <img src="images/img11.jpg" alt=""/>
+					</li>
+					<li data-type="digital" class="is-hidden col-sm-3 appsDevelopment">
+						<div class="portfolio_single_content">
+                                                    <img src="images/Effy.jpg" alt=""/>
                                                     <div>
-                                                        <a href="#">Developper</a>
-                                                        <span>Subtitle</span>
+                                                        <a href="#">Effy ZHANG</a>
+                                                        <span>Digital finance<br/>RPA expert<br/>Finance Datalake<br/>Retail finance support</span>
                                                     </div>
                                                 </div>
-                                            </div>
-		
-							<input id="member_input" type="file" accept="image/*"/>
-							<label for="member_input" id="img_label">File Choose<i class="fa fa-search-plus fa-lg"></i></label>
-						
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<ul class="cd-item-wrapper">
+					<li data-type="support" class="is-hidden col-sm-3 appsDevelopment retail">
+						<div class="portfolio_single_content">
+                                                    <img src="images/Huiyun.jpg" alt=""/>
+                                                    <div>
+                                                        <a href="#">Huiyun ZHI</a>
+                                                        <span>Retail finance expert<br />Queen of shrinkage<br />Stock / Margin / Shrinkage<br />Eone expert<br />Country opening</span>
+                                                    </div>
+                                                </div>
+					</li>
+
+					<li data-type="IT" class="is-hidden col-sm-3 appsDevelopment">
+						 <div class="portfolio_single_content">
+                                                    <img src="images/Yonglong.jpg" alt=""/>
+                                                    <div>
+                                                        <a href="#">Yonglong MA</a>
+                                                        <span>IT Finance</span>
+                                                    </div>
+                                                </div>
+					</li>
+					
+					<li data-type="digital" class="is-hidden col-sm-3 appsDevelopment">
+						<div class="portfolio_single_content">
+                                                    <img src="images/Jarvis.png" alt=""/>
+                                                    <div>
+                                                        <a href="#">Jarvis CHEN</a>
+                                                        <span>Full-end dev<br />RPA dev</span>
+                                                    </div>
+                                                </div>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<ul class="cd-item-wrapper">
+					<li  data-type="support" class="is-hidden col-sm-3 appsDevelopment CP" >
+						<div class="portfolio_single_content">
+                                                    <img src="images/Judy.jpg" alt=""/>
+                                                    <div>
+                                                        <a href="#">Judy TAO</a>
+                                                        <span>PEX&GEX expert(Asia)<br>Cashing up flow(Asia)<br/>Ordmax<br>Country opening</span>
+                                                    </div>
+                                                </div>
+					</li>
+					<li data-type="IT" class="is-hidden col-sm-3 appsDevelopment">
+						 <div class="portfolio_single_content">
+                                                   <img src="images/Sofia.jpg" alt=""/>
+                                                    <div>
+                                                        <a href="#">Sofia YANG</a>
+                                                        <span>Negotiation leader</span>
+                                                    </div>
+                                                </div>
+					</li>
+				    <li data-type="digital" class="is-hidden col-sm-3 appsDevelopment">
+						<div class="portfolio_single_content">
+                                                    <img src="images/Luyao.jpg" alt=""/>
+                                                    <div>
+                                                        <a href="#">Luyao LYU</a>
+                                                        <span>Front dev<br />RPA dev</span>
+                                                    </div>
+                                                </div>
+					</li>
+					
+				</ul>
+			</li>
+			
+			<li>
+				<ul class="cd-item-wrapper">
+					<li  data-type="support" class="is-hidden col-sm-3 appsDevelopment clifou">
+						<div class="portfolio_single_content">
+                                                    <img src="images/James.jpg" alt=""/>
+                                                    <div>
+                                                        <a href="#">James DING</a>
+                                                        <span>Prod finance expert<br/>Prod.com expert<br/>Clifou expert<br/>E-invoice PMO</span>
+                                                    </div>
+                                                </div>
+					</li>
+
+					
+				</ul>
+			</li>
+			
+			<li>
+				<ul class="cd-item-wrapper">
+					<li  data-type="support" class="is-hidden col-sm-3 appsDevelopment clifou">
+						<div class="portfolio_single_content">
+                                                    <img src="images/Simon.jpg" alt=""/>
+                                                    <div>
+                                                        <a href="#">Simon LASSALAS</a>
+                                                        <span>Prod finance expert<br/>Clifou expert</span>
+                                                    </div>
+                                                </div>
+					</li>
+
+					
+				</ul>
+			</li>
+			<li>
+				<ul class="cd-item-wrapper">
+					<li data-type="support" class="is-hidden col-sm-3 appsDevelopment retail"> 
+						<div class="portfolio_single_content">
+                                                    <img src="images/Lily.jpg" alt=""/>
+                                                    <div>
+                                                        <a href="#">Lily LV</a>
+                                                        <span>Finance support<br/>Retail</span>
+                                                    </div>
+                                                </div>
+					</li>
+
+					
+				</ul>
+			</li>
+			<li>
+				<ul class="cd-item-wrapper">
+					<li data-type="support" class="is-hidden col-sm-3 appsDevelopment retail">
+						<div class="portfolio_single_content">
+                                                    <img src="images/Yiwen.jpg" alt=""/>
+                                                    <div>
+                                                        <a href="#">Yiwen ZHANG</a>
+                                                        <span>Prod finance expert<br/>Finance support<br/>Eone expert</span>
+                                                    </div>
+                                                </div>
+					</li>
+
+					
+				</ul>
+			</li>
+			<li>
+				<ul class="cd-item-wrapper">
+					<li  data-type="support" class="is-hidden col-sm-3 appsDevelopment CP">
+						<div class="portfolio_single_content">
+                                                    <img src="images/Dean.jpg" alt=""/>
+                                                    <div>
+                                                        <a href="#">Dean ZHENG</a>
+                                                        <span>Country opening<br/>Retail finance<br/>Negotiation leader</span>
+                                                    </div>
+                                                </div>
+					</li>
+
+					
+				</ul>
+			</li>
+			
+		</ul> <!-- cd-gallery -->
+	</div>
+						<div id="add-member" class="floatup"  style="display:none" >
+							<div class="addmember" style="height: auto">
+								<span class="close" id="close" style="opacity: 1"></span>
+								<div class="upload-top"><h3 style="text-align: center;font-size: 27px;padding-top:20px;color:white">Add a member</h3></div>
+							<input type="text" class="add-news" value="title" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'title';}"><br />
+								<textarea value="content" class="add-news" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'content';}" rows="8" >content</textarea><br/>
+								<input id="img_input" type="file" accept="image/*"/><label for="img_input" class="file_label" style="margin: 15px 15%">news image</label><br>
+								<button class="login" style="width: 30%;margin: 10px 10%;">confirm</button>
+								<button class="login" style="width: 30%;margin: 10px 10%;position:absolute">cancel</button>
+								<div id="newsimg"></div>
+							</div>
+							</div>
 						<div class="clearfix"> </div>
 					</div>
 					
-						</div></div>
-					</div><!--features-->
-				</div>
+						</div>
+
+	
+	</div>
 				
-					
-				</div>
-			</div>
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -574,87 +471,95 @@ function renderBrushed(params) {
 	<script src="js/jquery.singlePageNav.min.js"></script>  
 				
 				
+<script src="js/banner.js"></script>
+    <script  src="js/index.js"></script>
 	<script type="text/javascript">
-		 $('.jQ_sliderSwitch li').on('click', function() {
-        var $elem = $(this);
-        var index = $elem.index();
-        $('#myRoundabout').roundabout('animateToChild', index);
-        return false;
-    });
-		 $('#img-slider').roundabout({  })
-			 .bind({
-			 animationEnd: function(e) {
-            var index = $('#img-slider').roundabout('getChildInFocus');
-            $('.jQ_sliderSwitch li').removeClass('active');
-            $('.jQ_sliderSwitch li').eq(index).addClass('active');
-        }
-    });
 
-	$(document).ready(function() {
-		$('#myRoundabout').roundabout({
-			 shape: 'square',
-			 minScale: 0.93, // tiny!
-			 maxScale: 1, // tiny!
-			 easing:'easeOutExpo',
-			 clickToFocus:'true',
-			 focusBearing:'0',
-			 duration:800,
-			 reflect:true
-		});
-	});
-		
-		
-		$("#membere_input").on("change", function(e) {
-			var file = e.target.files[0]; //获取图片资源
-			if (!file.type.match('image.*')) {
-				return false;
-			}
-			var reader = new FileReader();
-			reader.readAsDataURL(file);
-			
-			reader.onload = function(arg) {
-				var member = document.getElementById("member");
-				
-			
-			}});
+	
+						$(function(){
+        var bannerSlide = new slide($("#banner-tab"), {
+            event: "hover",
+            auto: false,
+            controller: $('#bannerCtrl')
+        });
+
+        $(".prev").click(function () {
+            bannerSlide.prev();
+        });
+
+        $(".next").click(function () {
+            bannerSlide.next();
+        })
+
+    })
 			
 			
+　　      $(function(){
+　　　　	$("#slimScrollDiv").slimScroll({ height: '700px' });
+			})
+			$('#slimScrollDiv').slimScroll().bind('slimscroll', function(e, pos){
+				if(pos=='bottom'){
+     // 执行其他逻辑
+				}
+   			});
 			
+		$(document).ready(function(){
+			$(".button").click(function(){
+				$("#add-news").show();});
 			
+				});
+ 
+			$(document).ready(function(){
+			$("#close").click(function(){
+				$("#add-news").hide();});
 			
+				});
 		
 			
 		$("#img_input").on("change", function(e) {
-			var file = e.target.files[0]; //获取图片资源
-			if (!file.type.match('image.*')) {
-				return false;
-			}
-			var reader = new FileReader();
-			reader.readAsDataURL(file); // 读取文件
-		
-			reader.onload = function(arg) {
-				var roundabout = document.getElementById("myRoundabout"); 
-				var dots = document.getElementById("dots");
-				var newnode = document.createElement("li");
-				newnode.innerHTML ='<img src="' + arg.target.result + '" alt=""/>';
-				var newdots = document.createElement("li");
-				newdots.innerHTML = roundabout.appendChild(newnode);
-				dots.appendChild  ;
-				
-				$('#myRoundabout').roundabout({
-			 	shape: 'square',
-			 	minScale: 0.93, // tiny!
-			 	maxScale: 1, // tiny!
-			 	easing:'easeOutExpo',
-			 	clickToFocus:'true',
-			 	focusBearing:'0',
-			 	duration:800,
-			 	reflect:true
-		});
-			}
+
+  var file = e.target.files[0]; //获取图片资源
+
+  // 只选择图片文件
+  if (!file.type.match('image.*')) {
+    return false;
+  }
+
+  var reader = new FileReader();
+
+  reader.readAsDataURL(file); // 读取文件
+
+  // 渲染文件
+  reader.onload = function(arg) {
+debugger;
+    var img = '<img class="preview" src="' + arg.target.result + '" alt="preview"/>';
+    $("newsimg").empty().append(img);
+  }
+});
 			
-		});
 	</script>
-				
+
+
+<!--<script type="text/javascript">
+	$.ajax({ 
+		type:"GET", 
+		url:"http://10.66.58.8:8080/api/news/getAll",
+		dataType:"json", 
+		cache: false,
+           processData: false,
+           contentType: false,
+		}).success(function (data) {
+		for(var i=0;i<data.data.length;i++){
+		$("#news-content").append("<tr><th>"+data.data[i].id+"</th><th>"+data.data[i].title+"</th><th>"+data.data[i].content+"</th><th>"+data.data[i].imgurl+"</th><th><a href='#' id='edit'>edit</a></th></tr>");}
+	}).error(function () {
+		alert("error");
+       });
+	
+	
+	$(document).ready(function(){
+			$("#edit").click(function(){
+				$("#edit-news").show();});
+				});
+</script>-->
 </body>
-</html>>
+</html>

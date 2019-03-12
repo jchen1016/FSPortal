@@ -9,8 +9,8 @@ import java.io.IOException;
 
 public interface FileService {
 
-    public void downloadFile(HttpServletResponse response);
+    void downloadFile(HttpServletResponse response);
 
-    public String fileUpload(MultipartFile file, String path) throws IOException;
+    String fileUpload(MultipartFile file, String path,String targetFileName, boolean needConverExcel) throws IOException, InterruptedException;
 
 }

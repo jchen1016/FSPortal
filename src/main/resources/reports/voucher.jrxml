@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="voucher" language="groovy" pageWidth="900" pageHeight="595" orientation="Landscape" columnWidth="860" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fdb0b52e-2666-484b-a438-5a5e32faffbf">
-	<property name="ireport.zoom" value="2.8531167061100033"/>
-	<property name="ireport.x" value="553"/>
-	<property name="ireport.y" value="194"/>
+	<property name="ireport.zoom" value="1.331000000000001"/>
+	<property name="ireport.x" value="61"/>
+	<property name="ireport.y" value="294"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -206,10 +206,10 @@
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="178" splitType="Stretch">
+		<band height="400" splitType="Stretch">
 			<componentElement>
-				<reportElement key="table" style="table" x="28" y="0" width="824" height="39" uuid="2d725f91-88ce-4021-ba9c-bc666b022e68"/>
-				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+				<reportElement key="table" style="table" x="28" y="0" width="824" height="400" uuid="2d725f91-88ce-4021-ba9c-bc666b022e68"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="Table Dataset 1" uuid="2f112f1a-ad64-4abc-ae73-ced8979a8cee">
 						<dataSourceExpression><![CDATA[$F{tabledata}]]></dataSourceExpression>
 					</datasetRun>

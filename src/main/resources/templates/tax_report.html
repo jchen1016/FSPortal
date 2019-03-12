@@ -1,628 +1,591 @@
 <!DOCTYPE html>
 <html>
-<head> 
-<title>Tax report</title>
-<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-<link href="css/font-awesome.css" rel="stylesheet"  media="all">
+<head>
+    <title>Tax report</title>
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/font-awesome.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Marvel:400,400italic,700,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <!--//web-font-->
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Plot Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
 
-	
-<!--web-font-->
-	
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-<link href='https://fonts.googleapis.com/css?family=Marvel:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-<!--//web-font-->
-<!-- Custom Theme files -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Plot Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //Custom Theme files -->
-<!-- js -->
-<script src="js/jquery-1.11.1.min.js"></script> 
-<!-- //js -->	
-<!-- start-smoth-scrolling-->
-<script src="js/echarts.min.js"></script>
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- //Custom Theme files -->
+    <!-- js -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <!-- start-smoth-scrolling-->
+    <script src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/jquery.jqcandlestick.min.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="js/tax-report.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
 
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/jquery.jqcandlestick.min.js"></script> 
-<script type="text/javascript" src="js/easing.js"></script>
-<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script>
-<script src="js/jquery.slimscroll.min.js"></script>
-<script src="js/core.min.js"></script>	
-<script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-			});
-		});
-</script>
-
-
-<!--//end-smoth-scrolling-->
+    <!--//end-smoth-scrolling-->
 </head>
 <body style="background-color: #F3F3F3">
-	<div class="head_bg">
-		<div class="navbar-top">
-			<ul class="nav navbar-nav navbar-right">
-			<li class="dropdown">
-	        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding:0px 15px" ><i class="fa fa-comments-o fa-2x" style="line-height: 31px;font-weight:500"></i></a>
-			</li>
-			<li class="dropdown">
-	        	<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown" style="padding:0px 15px" ><img src="images/1.png"></a>
-	        	<ul class="dropdown-menu">
-					<li class="m_2"><a href="#"><i class="fa fa-user"></i> Profile</a></li>
-					<li class="m_2"><a href="#"><i class="fa fa-wrench"></i> Settings</a></li>
-					<li class="m_2"><a href="#"><i class="fa fa-shield"></i> Lock Profile</a></li>
-					<li class="m_2"><a href="#"><i class="fa fa-lock"></i> Logout</a></li>	
-	        	</ul>
-	      	</li>
-			</ul>
-		    <form class="navbar-form navbar-right">
-             <input type="text" class="form-control" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
-            </form>
-	    </div>
-		<div class="wrap">
-			<div class="logo">
-				<a href="index.html" style="color:#23b7e5;padding:5px">Finance</a><a href="index.html" style="color:#B1E5F5;padding:5px">& Solution</a>
-			</div> 
-			<div class="header">
-				<div class="h_left">	
-				<ul class="menutop">
-				<div class="dropdown" style="top:-16px" ><a id="main-menu-toggle" class="hidden-phone open"><i class="fa fa-bars"></i></a></div>
-				<div class="dropdown">
-				  <li>
-					<a href="AP.html">AP</a>
-					<!--<div class="dropdown-content" style="width: 100px">
-      					<a href="#" style="padding-left:0;padding-right:0;border:#eee;line-height: 20px">Tax report</a>
-   						<a href="#"  style="padding-left:0;padding-right:0;border:#eee;line-height: 20px">XXX</a>
-      					<a href="#"  style="padding-left:0;padding-right:0;border:#eee;line-height: 20px">XXX</a>
-    				</div>-->
-				  </li>
-				</div>
-				<div class="dropdown">
-					<li><a href="Conso.html">Conso</a></li>
-				</div>
-				<div class="dropdown">
-					<li><a href="GL.html">GL</a></li>
-				</div>
-				<div class="dropdown">
-					<li><a href="Tax.html">Tax</a></li>
-				</div>
-				<div class="dropdown">
-					<li><a href="RPA.html">RPA</a></li>
-				</div>
-				<div class="dropdown">
-					<li><a href="Datalake.html">Datalake</a></li>
-				</div>
-					
-				</ul>
-	        			</div>
-					</div>
-				</div>
-				
-				
-				
-	<aside class="sidebar" id="sidebar-left">
-				<div class="top-nav sidebar-scroll" id="leftside-navigation">
-					<div id="slimScrollDiv">
-					<nav>
-					<div class="nav1">
-						<ul class=" nav nav-sidebar">
-							<li class="sub-menu">
-								<a href="index.html#dashboard">
-									<i class="fa fa-laptop" style="color:#5D9CEC"></i><span class="text"> Dashboard</span><span class="fa fa-angle-down pull-right"></span></a>
-								<ul>
-         						 <li><a href="#">Shrinkage report</a></li>
-								 <li><a href="#">Sales / To</a></li>
-        						</ul>
-							</li>
-							 <li>
-								<a href="index.html#about"><i class="fa fa-file-text" style="color:#4FC1E9" ></i><span class="text">  Newsletter</span></a>
-      						</li>
-							
-							<li>
-								<a href="index.html#team"><i class="fa fa-list-alt" style="color:#48CFAD"></i><span class="text"> F&S team</span> </a>
-							</li>
-							<li class="sub-menu">
-								<a href="#">
-									<i class="fa fa-table" style="color:#A0D468"></i><span class="text"> Useful link</span><span class="fa fa-angle-down pull-right"></span></a>
-								<ul>
-         						 <li><a href="#">Ticket</a></li>
-								 <li><a href="#">Website</a></li>
-        						</ul>
-							</li>
-							<li>
-								<a href="index.html#contact"><i class="fa fa-signal" style="color:#FFCE54"></i><span class="text"> Contact us</span> </a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-briefcase" style="color:#FC6E51"></i><span class="text"> UI Features</span> <span class="fa fa-angle-down pull-right"></span></a>
-								
-							</li>
-							<li><a href="widgets.html"><i class="fa fa-retweet" style="color:#ED5565"></i><span class="text"> Widgets</span></a></li>
-							<li><a href="typography.html"><i class="fa fa-font" style="color:#AC92EC"></i><span class="text"> Typography</span></a></li>
-							<li>
-								<a href="#"><i class="fa fa-bolt" style="color:#EC87C0"></i><span class="text"> Icons</span> <span class="fa fa-angle-down pull-right"></span></a>
-								
-							</li>
-							<li><a href="gallery.html"><i class="fa fa-picture-o" style="color:#5D9CEC"></i><span class="text"> Gallery</span></a></li>							
-							<li><a href="calendar.html"><i class="fa fa-calendar" style="color:#4FC1E9"></i><span class="text"> Calendar</span></a></li>
-						</ul>
-					</div>	
-					<!-- script-for-menu -->
-						 <script>
-						   $( "span.menu-icon" ).click(function() {
-							 $( ".nav1" ).slideToggle( 300, function() {
-							 // Animation complete.
-							  });
-							 });
-						</script>
-					<!-- /script-for-menu --></nav></div>
-					</div></aside>
-				<div class="clearfix"> </div>				
-				
-			</div>
-			<!--//side-bar-->
-	
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 span10 main" id="content" style="margin-left:15%">
-				<div class="about">
-					 <h3 style="font-size: 15px"><a href="Tax.html">Tax </a>/ Tax report</h3>
-					</div>
-					<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 about-main-function">
-				
-						<div class="main-text">
-					
-							<div style="height:82px;padding:30px;">
-								<div class="select col-xs-2" >
-  									<select id='voucher' onchange="func()">
-    								<option value="voucher">voucher</option>
-   							    	<option value="sub-ledger">Sub-ledger</option>
- 							    	</select>
-								</div>
-								
-								
-								
-								<div class="col-xs-1" style="text-align: center;line-height: 40px;font-size:20px">by</div>
-								<div class="select col-xs-2">
-  									<select id='company'>
-    								<option>company</option>
-   							    	<option value='fiscal'>fiscal</option>
- 							   		 </select>
-								</div>
-								
-								<button class="button" style="left:40px;border: 0" disabled="true" id="btn">upload</button>
-								
-							</div>
-							<!--<label style="margin-left: 20px;">managerName:</label>&nbsp;<input type="text" id="managerName" /><br/><br/>
-								<label style="margin-left: 20px;">recheckName:</label>&nbsp;<input type="text" id="recheckName" /><br/><br/>-->
-						         <div id="buildername" style="padding: 15px 35px;">Builder name<input type="text" class="user" id="builderName"  style="background: url(../Finance&Solution/images/user.png) no-repeat 10px 3px;margin-left: 20px;width: 15%; background-color: white" onmouseleave="checkInput()" oninput="changeBtnable()"><span style="color:#FC6E51" id="notice"> Please enter Builder Name, Thanks! </span></div>
-								<!--<label style="margin-left: 20px;">Builder name:</label>&nbsp;<input type="text" id="builderName" style="border-radius: 3px;border: 1px solid #aaa;"/><br/><br/><br/>-->
-							
-					</div>
-						
-						
-						
-						
-						<div id="upload" class="floatup">
-							<div class="upload-ticket" style="height: auto">
-								<span class="close" id="closeVoucher" style="opacity: 1"></span>
-								<div class="upload-top"><h3 style="text-align: center;font-size: 27px;padding-top:20px;color:white">File upload</h3></div>
-								<div id="drop_zone"><div id="drop"><img src="images/upload.png"><br><div style="color:#aaa;padding:15px;font-size:15px">Drop files here to upload</div>
-									<form id="uploadForm" enctype="multipart/form-data" style="text-align: center"><input id="file" type="file" name="file"/><label for="file" class="file_label">Or browse</i></label></form></div>
-								</div>
-							<output id="list" style="padding-top:5px"></output>
-								<!--<div>Progessing (in Bytes): <span id="bytesRead"></span> / <span id="bytesTotal"></span> 
-								</div> -->
-							<!--<div style="background:#848484;width:100px;height:10px;margin-top:5px">        
-								<div id="progressNumber" style="background:#428bca;width:0px;height:10px" ></div>        
-							</div>    
-							<font id="percent">0%</font><br><span id="bytesTotal"></span> -->
+<div class="navbar-top">
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <i
+                class="fa fa-comments-o fa-2x" style="line-height:31px;font-weight:500"></i></a></li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img id="user-photo"
+                                                                                                    src="images/Luyao.jpg"></a>
+            <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-angle-right"></i> Profile</a></li>
+                <li><a href="testmonials.html"><i class="fa fa-angle-right"></i> Settings</a></li>
+                <li><a href="log.html"><i class="fa fa-angle-right"></i> Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+    <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" value="Search..." onfocus="this.value = '';"
+               onblur="if (this.value == '') {this.value = 'Search...';}">
+    </form>
+</div>
+<div>
+    <div class="logo"><a href="home" style="color:#23b7e5;padding:5px">Finance</a><a href="index.html"
+                                                                                           style="color:#B1E5F5;padding:5px">&
+        Solution</a></div>
+    <div class="header">
+        <div class="h_left">
+            <ul class="menutop">
+                <div class="dropdown" style="top:-16px"><a id="main-menu-toggle" class="hidden-phone open"><i
+                        class="fa fa-bars"></i></a></div>
+                <div class="dropdown">
+                    <li>
+                        <a href="#">AP</a>
+                    </li>
+                </div>
+                <div class="dropdown">
+                    <li><a href="conso">Conso</a></li>
+                </div>
+                <div class="dropdown">
+                    <li><a href="gl">GL</a></li>
+                </div>
+                <div class="dropdown">
+                    <li><a href="tax">Tax</a></li>
+                </div>
+                <div class="dropdown">
+                    <li><a href="rpa">RPA</a></li>
+                </div>
+                <div class="dropdown">
+                    <li><a href="datalake">Datalake</a></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>
 
-								<!--<h4 style="color: red;padding-top: 15px">Attention: only accept excel files</h4>-->
-							
-								<!--<button class="button" id="loadVoucher" style="border: 0;float:left;font-size:15px;margin:10px">upload</button>-->
-								
-									<!--<a href="http://10.66.57.171:8080/report/pdf/voucher?fileName=Test.xlsx&companyType=sdfs">export</a>-->
-								</button>
-								
-							</div>
-							</div>
-						
-					
-	
-					<div id="upload1"  style="display:none" class="floatup">
-							<div class="upload-ticket" id="upload-ticket" style="height:300px">
-								<span class="close" id="closeSub" style="opacity: 1"></span>
-								<div class="upload-top"  id="top"><h3 style="text-align: center;font-size: 27px;padding-top: 20px;color:white">File upload</h3></div>
-								<div id="drop_zone1" style="position: relative;float:left;width:45%;left: 2%;"> <img src="images/upload.png"><div style="color:#aaa;padding:5px;font-size:15px;font-weight: 300">Drop GL file here to upload</div>
-								<form id="upForglSubledger" enctype="multipart/form-data" style="text-align: center"><input id="fileForglSubledger" type="file" name="file"/><label for="fileForglSubledger" style="margin: 30px 10px;" class="file_label">GL  file</i></label>
-								</form>
-								</div>
-								<div id="drop_zone2" style="position: relative;float:right;width:45%;left: -2%;"> <img src="images/upload.png"><div style="color:#aaa;padding:5px;font-size:15px;font-weight: 300">Drop BALANCE file here to upload</div>
-								<form id="upForblSubledger" enctype="multipart/form-data" style="text-align: center"><input id="fileForblSubledger" type="file" name="file"/><label for="fileForblSubledger" class="file_label" style="margin: 30px 10px;" >Balance file</i></label>
-								</form>
-								</div>
-								<output id="listForglSubledger"></output>
-								<output id="listForblSubledger" style="padding:70px;"></output>
-								
-							<button class="button" style="border: 0;float:right;font-size:15px;margin:10px;padding:0" id="exportSubledger">
-							</div>
-							</div>
-				</div>
-				
-				
-				
-					</div>
-				</body>
-				
+<!--//side-bar-->
+<aside class="sidebar" id="sidebar-left">
+    <div id="leftside-navigation">
+        <div id="slimScrollDiv">
+            <div class="nav1">
+                <ul class="nav nav-sidebar">
+                    <li class="sub-menu"><a href="#dashboard"> <i class="fa fa-laptop" style="color:#5D9CEC"></i><span
+                            class="text"> Dashboard</span><span class="fa fa-angle-down pull-right"></span></a>
+                        <ul>
+                            <li><a href="#">Shrinkage report</a></li>
+                            <li><a href="#">Sales / To</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="#about"><i class="fa fa-file-text" style="color:#4FC1E9"></i><span
+                            class="text"> Newsletter</span><span class="fa fa-angle-down pull-right"></span></a>
+                        <ul>
+                            <li><a href="news1.html">Sport1</a></li>
+                            <li><a href="news2.html">Sport2</a></li>
+                            <li><a href="news3.html">Sport3</a></li>
+                            <li><a href="news4.html">Sport4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#team"><i class="fa fa-list-alt" style="color:#48CFAD"></i><span
+                            class="text"> F&S team</span> </a></li>
+                    <li class="sub-menu"><a href="#"> <i class="fa fa-table" style="color:#A0D468"></i><span
+                            class="text"> Useful link</span><span class="fa fa-angle-down pull-right"></span></a>
+                        <ul>
+                            <li><a href="https://support.decathlon.com/dashboard?TENANTID=157222659">Ticket</a></li>
+                            <li><a href="#">Website</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact"><i class="fa fa-signal" style="color:#FFCE54"></i><span class="text"> Contact us</span>
+                    </a></li>
+                    <li><a href="#"><i class="fa fa-briefcase" style="color:#FC6E51"></i><span
+                            class="text"> UI Features</span> <span class="fa fa-angle-down pull-right"></span></a></li>
+                    <li><a href="widgets.html"><i class="fa fa-retweet" style="color:#ED5565"></i><span class="text"> Widgets</span></a>
+                    </li>
+                    <li><a href="typography.html"><i class="fa fa-font" style="color:#AC92EC"></i><span class="text"> Typography</span></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-bolt" style="color:#EC87C0"></i><span class="text"> Icons</span>
+                        <span class="fa fa-angle-down pull-right"></span></a></li>
+                    <li><a href="gallery.html"><i class="fa fa-picture-o" style="color:#5D9CEC"></i><span class="text"> Gallery</span></a>
+                    </li>
+                    <li><a href="calendar.html"><i class="fa fa-calendar" style="color:#4FC1E9"></i><span class="text"> Calendar</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+<div class="clearfix"></div>
+<!--//side-bar-->
 
+<div class="hero_slide_background" style="background-image:url(../Finance&Solution/images/sport4.jpg)"></div>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 span10 main" id="content" style="margin-left:15%">
+    <div class="hero_slide_background1"></div>
+    <div class="about">
+        <h3 style="font-size: 15px"><a href="taxReport">Tax </a>/ Tax report</h3>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 about-main-function">
+        <div class="main-text">
+            <div style="height:82px;padding:30px;">
+                <div class="select col-xs-2">
+                    <select id='voucher' onchange="func()">
+                        <option value="voucher">voucher</option>
+                        <option value="sub-ledger">Sub-ledger</option>
+                    </select>
+                </div>
+                <div class="col-xs-1" style="text-align: center;line-height: 40px;font-size:20px">by</div>
+                <div class="select col-xs-2">
+                    <select id='company'>
+                        <option>company</option>
+                        <option value='fiscal'>fiscal</option>
+                    </select>
+                </div>
+                <button class="button" style="left:40px;border: 0" disabled="true" id="btn">upload</button>
+            </div>
+            <div id="buildername" style="padding: 15px 35px;">Builder name
+                <input type="text" class="user" id="builderName"
+                       style="background: url(../Finance&Solution/images/user.jpg) no-repeat 10px 3px;margin-left: 20px;width: 15%; background-color: white"
+                       onmouseleave="checkInput()" oninput="changeBtnable()">
+                <span style="color:#FC6E51" id="notice"> Please enter Builder Name, Thanks! </span></div>
+        </div>
+        <div id="upload" class="floatup">
+            <div class="upload-ticket" style="height: auto"><span class="close" id="closeVoucher"
+                                                                  style="opacity: 1"></span>
+                <div class="upload-top">
+                    <h3 style="text-align: center;font-size: 27px;padding-top:20px;color:white">File upload</h3>
+                </div>
+                <div id="drop_zone">
+                    <div id="drop"><img src="images/upload.jpg"><br>
+                        <div style="color:#aaa;padding:15px;font-size:15px">Drop files here to upload</div>
+                        <form id="uploadForm" enctype="multipart/form-data" style="text-align: center">
+                            <input id="file" type="file" name="file"/>
+                            <label for="file" class="file_label">Or browse</i></label>
+                        </form>
+                    </div>
+                </div>
+                <output id="list" style="padding-top:5px"></output>
+            </div>
+        </div>
+        <div id="upload1" style="display:none" class="floatup">
+            <div class="upload-ticket" id="upload-ticket" style="height:300px"><span class="close" id="closeSub"
+                                                                                     style="opacity: 1"></span>
+                <div class="upload-top" id="top">
+                    <h3 style="text-align: center;font-size: 27px;padding-top: 20px;color:white">File upload</h3>
+                </div>
+                <div id="drop_zone1" style="position: relative;float:left;width:45%;left: 2%;"><img
+                        src="images/upload.jpg">
+                    <div style="color:#aaa;padding:5px;font-size:15px;font-weight: 300">Drop GL file here to upload
+                    </div>
+                    <form id="upForglSubledger" enctype="multipart/form-data" style="text-align: center">
+                        <input id="fileForglSubledger" type="file" name="file"/>
+                        <label for="fileForglSubledger" style="margin: 30px 10px;" class="file_label">GL
+                            file</i></label>
+                    </form>
+                </div>
+                <div id="drop_zone2" style="position: relative;float:right;width:45%;left: -2%;"><img
+                        src="images/upload.jpg">
+                    <div style="color:#aaa;padding:5px;font-size:15px;font-weight: 300">Drop BALANCE file here to
+                        upload
+                    </div>
+                    <form id="upForblSubledger" enctype="multipart/form-data" style="text-align: center">
+                        <input id="fileForblSubledger" type="file" name="file"/>
+                        <label for="fileForblSubledger" class="file_label" style="margin: 30px 10px;">Balance
+                            file</i></label>
+                    </form>
+                </div>
+                <output id="listForglSubledger"></output>
+                <output id="listForblSubledger" style="padding:70px;"></output>
+                <button class="button" style="border: 0;float:right;font-size:15px;margin:10px;padding:0"
+                        id="exportSubledger"></button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 
-    <script src="js/bootstrap.js"> </script>
-    <script  src="js/index.js"></script>
-	<script src="js/jquery.singlePageNav.min.js"></script>  
+<script src="js/bootstrap.js"></script>
+<script src="js/index.js"></script>
 <script type="text/javascript">
-	function func(){
-		var options =$("#voucher option:selected").val();
-		if(options=="voucher")
-			{$("#buildername").show();
-			 
-    $("#btn").attr("disabled","true");
-			}
-		else if(options=="sub-ledger")
-			{
-				$("#buildername").hide();
-    			$("#btn").removeAttr("disabled");
-			}
-		
-}
-	function changeBtnable(){
-    $("#btn").removeAttr("disabled");
-	$("#notice").hide()
-}
-function changeBtndisable(){
-    $("#btn").attr("disabled","true");
-	$("#notice").show();
-}
-	function checkInput(){
-    var text = $("#builderName").val();
-    if(text==null||text==""){
-        changeBtndisable();
+    //if need buildername or not
+    function func() {
+        var options = $("#voucher option:selected").val();
+        if (options == "voucher") {
+            $("#buildername").show();
+            $("#btn").attr("disabled", "true");
+        }
+        else if (options == "sub-ledger") {
+            $("#buildername").hide();
+            $("#btn").removeAttr("disabled");
+        }
     }
-}
 
-					var spanv = document.getElementById("closeVoucher");
-					var spans = document.getElementById("closeSub");
-					var options=$("#voucher option:selected");  
-					
-					$(document).ready(function(){
-						
-						$(".button").click(function(){
-						
-						obj = document.getElementById("voucher");
-    					if(obj.value=="voucher")
-							{
-								$("#upload").show();
-								$("#upload1").hide()
-					
-							}
-						else if(obj.value=="sub-ledger"){
-								$("#upload1").show();
-								$("#upload").hide()
-						}
-							
-		});
- 
-});
-					
-					$(function(){
-　　　　	$("#slimScrollDiv").slimScroll({ height: '700px' });
-			})
-			$('#slimScrollDiv').slimScroll().bind('slimscroll', function(e, pos){
-				if(pos=='bottom'){
-     // 执行其他逻辑
-				}
-   			});
-	
-	spanv.onclick = function() {
-    upload.style.display = "none";
-}
-	spans.onclick = function() {
-		upload1.style.display = "none";
-	}
+    //estimate if the buildername has been filled in or not
+    function changeBtnable() {
+        $("#btn").removeAttr("disabled");
+        $("#notice").hide()
+    }
+
+    function changeBtndisable() {
+        $("#btn").attr("disabled", "true");
+        $("#notice").show();
+    }
+
+    function checkInput() {
+        var text = $("#builderName").val();
+        if (text == null || text == "") {
+            changeBtndisable();
+        }
+    }
+
+    //different fonction for voucher or subledger
+    var spanv = document.getElementById("closeVoucher");
+    var spans = document.getElementById("closeSub");
+    var options = $("#voucher option:selected");
+    $(document).ready(function () {
+        $(".button").click(function () {
+            obj = document.getElementById("voucher");
+            if (obj.value == "voucher") {
+                $("#upload").show();
+                $("#upload1").hide()
+            }
+            else if (obj.value == "sub-ledger") {
+                $("#upload1").show();
+                $("#upload").hide()
+            }
+        });
+
+        spanv.onclick = function () {
+            window.location.href = "taxReport";
+        }
+        spans.onclick = function () {
+            window.location.href = "taxReport";
+        }
+
+    });
 </script>
-
 
 <script type="text/javascript">
-function handleFileSelect(evt) {
-  evt.stopPropagation();
-  evt.preventDefault();
-  var files = evt.dataTransfer.files; 
-  // 处理多文件
-  var output = [];
-  for (var i = 0, f; f = files[i]; i++) {
-    output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ')</li>');
-  }
-  // 显示文件信息
-  document.getElementById('list').innerHTML = output.join('');
-}
+    $(function () {
+        $("#slimScrollDiv").slimScroll({height: '700px'});
+    })
+    $('#slimScrollDiv').slimScroll().bind('slimscroll', function (e, pos) {
+        if (pos == 'bottom') {
+            // 执行其他逻辑
+        }
+    });
 
-function handleDragOver(evt) {
-  evt.stopPropagation();
-  evt.preventDefault();
-  evt.dataTransfer.dropEffect = 'copy';
-}
 
-// Setup the dnd listeners.
-var dropZone = document.getElementById('drop_zone');
-dropZone.addEventListener('dragover', handleDragOver, false);
-dropZone.addEventListener('drop', handleFileSelect, false);
-					
+    function handleFileSelect(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var file = e.dataTransfer.files;
+        if (file[0].type != ("application/vnd.ms-excel") && file[0].type != ("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")) {
+            alert("wrong type");
+            return false;
+        }
+        console.log(file);
+        var output = [];
+        output.push('<img src="images/microsoft.jpg" style="position:absolute;left: 50px;width: 45px;"><div style="position: absolute;left:100px;width: 90%;" id="liVoucherGLF"><font style="float: left">', file[0].name, '</font><div class="fa fa-times" id="delete1" style="cursor: pointer;color:#428bca;border: 0;position: absolute;right: 20%;font-size:13px;padding:0;"> </div> <div style="border-radius: 10px;background:#EBEBEB;width: 75%;height:8px;margin-top:25px;">  <div id="progressNumber" style="border-radius: 10px;background:#A0D468;width:0%;height:8px" ></div></div><font id="percent" style="float:left;padding-top: 5px;">0% done</font><div class="button" style="cursor: pointer;border: 0;position: absolute;top: 65px;left: -10%;font-size:13px;padding:5px;"  id="delete2">cancel</div><div id="loadVoucher" class="button" style="cursor: pointer;border: 0;position: absolute;top: 65px;right: 15%;font-size:13px;padding:5px;" >upload</div></div>');
+        document.getElementById('list').innerHTML = output.join('');
+        var x = document.getElementsByClassName("upload-ticket");
+        x[0].style.padding = "0px 0px 120px 0px";
+        //删除键
+        $("#delete1").click(function () {
+            var file = null;
+            var output = [];
+            document.getElementById('list').innerHTML = output.join('');
+            var x = document.getElementsByClassName("upload-ticket");
+            x[0].style.padding = "0px 0px 50px 0px";
+        });
+        $("#delete2").click(function () {
+
+            window.location.href = "taxReport";
+
+        });
+        $("#loadVoucher").click(function () {
+        //上传文件 显示进度
+            var form = document.forms["uploadForm"];
+            if (form["file"].files.length > 0) {
+                var file = form["file"].files[0];
+                var reader = new FileReader();
+                reader.onloadstart = function () {
+                    console.log("onloadstart");
+                    document.getElementById("bytesTotal").textContent = file.size;
+                }
+                reader.onprogress = function (p) {
+                    console.log("onprogress");
+                    var percentComplete = Math.round((p.loaded) * 100 / file.size);
+                    document.getElementById("percent").textContent = percentComplete + "%";
+                    document.getElementById("progressNumber").style.width = percentComplete + "%";
+                }
+                reader.onload = function () {
+                    console.log("load complete");
+                }
+                reader.onloadend = function () {
+                    if (reader.error) {
+                        console.log(reader.error);
+                    } else {
+                        document.getElementById("drop").textContent = "";
+                        document.getElementById("drop_zone").style.border = "2px dashed white";
+                    }
+                }
+                reader.readAsBinaryString(file);
+            } else {
+                alert("Please choose a file.");
+            }
+            //上传和下载文件
+            var filet = document.getElementById("file").files[0];
+            var formData = new FormData();
+            formData.append("file", filet);
+            console.log(formData.get("file"));
+            $.ajax({
+                type: 'post',
+                url: "http://10.66.58.8:8080/api/file/gLFileUpload",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+            }).success(function (data) {
+                document.getElementById("percent").textContent = "completed";
+                document.getElementById("progressNumber").style.width = "100%";
+                $("#progressNumber").append("<i class='fa fa-check' style='color: #A0D468;border: 0;position: absolute;right: 16%;font-size:12px;padding:0;top: 22px;'>");
+                $("#delete1").remove();
+                $("#loadVoucher").remove();
+                $("#drop_zone").append("<img src='images/download.jpg' style='width:64px;padding-top:20px'><div style='color:#aaa;padding: 40px 0px;font-size: 20px;'>You can download the file now!</div>");
+                $("#liVoucherGLF").append("<div class='button' style='cursor: pointer;border: 0;position: absolute;top: 65px;right: 15%;font-size:13px;padding:5px;background:#4FC1E9' id='exportVoucher'><a style='color:white' href='http://10.66.58.8:8080/api/report/pdf/voucher?fileName=" + data + "&companyType=" + $("#company").val() + "&builderName=" + $("#builderName").val() + "'>export</a><div>")
+            }).error(function () {
+                alert("上传失败");
+            });
+        });
+    }
+
+    function handleFileSelect1(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var file = e.dataTransfer.files;
+        if (file[0].type != ("application/vnd.ms-excel") && file[0].type != ("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")) {
+            alert("wrong type");
+            return false;
+        }
+        console.log(file);
+        var output = [];
+        output.push('<img src="images/microsoft.jpg" style="position:absolute;left:50px;width: 40px;top:300px"><div style="position: absolute;left:100px;width:90%;top:300px"  id="liSubGLF"><font style="float: left">', file[0].name, '</font><div class="fa fa-times" id="delete3" style="cursor: pointer;color:#428bca;border: 0;position: absolute;right: 20%;font-size:13px;padding:0;"> </div> <div style="border-radius: 10px;background:#EBEBEB;width:75%;height: 6px;margin-top:25px;">  <div id="progressNumber2" style="border-radius: 10px;background:#8DDD7D;width:0%;height:6px" ></div></div><font id="percent2" style="float:left;padding-top: 5px;">0% done</font>');
+        document.getElementById('listForglSubledger').innerHTML = output.join('');
+        document.getElementById("upload-ticket").style.height = "500px";
+        $("#delete3").click(function () {
+            $("#fileForglSubledger").val("");
+            var file = null;
+            var output = [];
+            document.getElementById('listForglSubledger').innerHTML = output.join('');
+            var x = document.getElementsByClassName("upload-ticket");
+
+        });
+    }
+
+    function handleFileSelect2(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var file = e.dataTransfer.files;
+        if (file[0].type != ("application/vnd.ms-excel") && file[0].type != ("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")) {
+            alert("wrong type");
+            return false;
+        }
+        console.log(file);
+        var output = [];
+        output.push('<img src="images/microsoft.jpg" style="position:absolute;left:50px;width: 40px;"><div style="position: absolute;left: 100px;width: 90%;" id="liSubBLF"><font style="float: left">', file[0].name, '</font><div class="fa fa-times" id="delete4" style="cursor: pointer;color:#428bca;border: 0;position: absolute;right: 20%;font-size:13px;padding:0;"> </div> <div style="border-radius: 10px;background:#EBEBEB;width:75%;height: 6px;margin-top:25px;">  <div id="progressNumber1" style="border-radius: 10px;background:#8DDD7D;width:0%;height:6px" ></div></div><font id="percent1" style="float:left;padding-top: 5px;">0% done</font><div class="button" style="cursor: pointer;border: 0;position: absolute;top: 65px;left: -10%;font-size:13px;padding:5px;"  id="delete5">cancel</div><div id="loadSub" class="button" style="cursor: pointer;border: 0;position: absolute;top: 65px;right: 15%;font-size:13px;padding:5px;" >upload</div></div>');
+        document.getElementById('listForblSubledger').innerHTML = output.join('');
+        document.getElementById("upload-ticket").style.height = "500px";
+//删除键
+        $("#delete4").click(function () {
+            var file = null;
+            var output = [];
+            document.getElementById('listForblSubledger').innerHTML = output.join('');
+            var x = document.getElementsByClassName("upload-ticket");
+            x[1].style.height = "400px";
+        });
+        $("#delete5").click(function () {
+            window.location.href = "taxReport";
+        });
+//上传文件 显示gl文件进度
+        $("#loadSub").click(function () {
+            var form = document.forms["upForglSubledger"];
+            var form1 = document.forms["upForblSubledger"];
+            if (form["fileForglSubledger"].files.length > 0) {
+                var file1 = form["fileForglSubledger"].files[0];
+                var reader = new FileReader();
+                reader.onloadstart = function () {
+                    console.log("onloadstart");
+                    document.getElementById("bytesTotal").textContent = file1.size;
+                }
+                reader.onprogress = function (p) {
+                    console.log("onprogress");
+                    var percentComplete = Math.round((p.loaded) * 100 / file1.size);
+                    document.getElementById("percent2").textContent = percentComplete + "%";
+                    document.getElementById("progressNumber2").style.width = percentComplete + "%";
+                }
+                reader.onload = function () {
+                    console.log("load complete");
+                }
+                reader.onloadend = function () {
+                    if (reader.error) {
+                        console.log(reader.error);
+                    } else {
+                        document.getElementById("drop_zone1").textContent = "";
+                        document.getElementById("drop_zone1").style.border = "0";
+                    }
+                }
+//上传文件gl 不显示下载按钮
+                reader.readAsBinaryString(file1);
+                var file1 = document.getElementById("fileForglSubledger").files[0];
+                var formData = new FormData();
+                formData.append("file", file1);
+                console.log(formData.get("file"))
+                $.ajax({
+                    type: 'post',
+                    url: "http://10.66.58.8:8080/api/file/gLFileUpload",
+                    data: formData,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                }).success(function (data) {
+                    document.getElementById("percent2").textContent = "completed";
+                    document.getElementById("progressNumber2").style.width = "100%";
+                    $("#progressNumber2").append("<i class='fa fa-check' style='color: #A0D468;border: 0;position: absolute;right: 16%;font-size:12px;padding:0;top: 22px;'>");
+                    $("#delete3").remove();
+                    //$("#exportVoucher").append("sdfsd");
+                }).error(function () {
+                    alert("上传失败");
+                });
+
+
+                //上传文件 显示bl文件进度
+                if (form1["fileForblSubledger"].files.length > 0) {
+                    var file = form1["fileForblSubledger"].files[0];
+                    var reader = new FileReader();
+                    reader.onloadstart = function () {
+                        console.log("onloadstart");
+                        document.getElementById("bytesTotal").textContent = file.size;
+                    }
+
+                    reader.onprogress = function (p) {
+                        console.log("onprogress");
+                        var percentComplete = Math.round((p.loaded) * 100 / file.size);
+                        document.getElementById("percent1").textContent = percentComplete + "%";
+                        document.getElementById("progressNumber1").style.width = percentComplete + "%";
+                    }
+                    reader.onload = function () {
+                        console.log("load complete");
+                    }
+                    reader.onloadend = function () {
+                        if (reader.error) {
+                            console.log(reader.error);
+                        } else {
+                            document.getElementById("drop_zone2").textContent = "";
+                            document.getElementById("drop_zone2").style.border = "0";
+                        }
+                    }
+                    reader.readAsBinaryString(file);
+                }
+            } else {
+                alert("Please choose a file.");
+            }
+
+            var file2 = document.getElementById("fileForblSubledger").files[0];
+            var formData = new FormData();
+            formData.append("file", file2);
+            console.log(formData.get("file"))
+//上传文件bl 显示下载按钮
+            $.ajax({
+                type: 'post',
+                url: "http://10.66.58.8:8080/api/file/balanceFileUpload",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+            }).success(function (data) {
+                var name = $("#liSubGLF").find("font").html();
+                document.getElementById("percent1").textContent = "completed";
+                document.getElementById("progressNumber1").style.width = "100%";
+                $("#progressNumber1").append("<i class='fa fa-check' style='color: #A0D468;border: 0;position: absolute;right: 16%;font-size:12px;padding:0;top: 22px;'>");
+                $("#delete4").remove();
+                $("#loadSub").remove();
+                $("#top").append("<div style='position: absolute;top: 85px;text-align: center;right: 0px;left: 0px;'><img src='images/download.jpg' style='width:64px;padding-top:20px'><div style='color:#aaa;padding: 40px 0px;font-size: 20px;'>You can download the file now!</div></div>")
+                // $("#liSubBLF").append("<div class='button' style='cursor: pointer;border: 0;position: absolute;top: 65px;right: 15%;font-size:13px;padding:5px;background:#4FC1E9' id='exportVoucher'><a style='color:white' href='http://10.66.58.8:8080/api/report/pdf/subledger?glfileName=" + name + "&balanceFileName=" + data + "&companyType=" + $("#company").val() + "'>export</a><div>")
+                $("#liSubBLF").append("<div class='button' style='cursor: pointer;border: 0;position: absolute;top: 65px;right: 15%;font-size:13px;padding:5px;background:#4FC1E9' id='exportVoucher'><a style='color:white' href='http://10.66.58.8:8080/api/report/pdf/subledger?glFileName=glFile.xlsx&balanceFileName=" + data + "&companyType=" + $("#company").val() + "'>export</a><div>")
+            }).error(function () {
+                alert("上传失败");
+            });
+
+        });
+    }
+
+    function handleDragOver(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'copy';
+    }
+
+    function handleDragOver1(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'copy';
+    }
+
+    function handleDragOver2(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'copy';
+    }
+
+    // Setup the dnd listeners.
+    var dropZone = document.getElementById('drop_zone');
+    dropZone.addEventListener('dragover', handleDragOver, false);
+    dropZone.addEventListener('drop', handleFileSelect, false);
+
+
+    var dropZone1 = document.getElementById('drop_zone1');
+    dropZone1.addEventListener('dragover', handleDragOver1, false);
+    dropZone1.addEventListener('drop', handleFileSelect1, false);
+
+    var dropZone2 = document.getElementById('drop_zone2');
+    dropZone2.addEventListener('dragover', handleDragOver2, false);
+    dropZone2.addEventListener('drop', handleFileSelect2, false);
+
 </script>
 
 
-
-
-<script type="text/javascript">
-	$("#file").on("change", function(e) {
-		var file = e.target.files[0]; 
-		console.log(file);
-		var output = [];
- 		output.push('<img  src="images/microsoft.png" style="position:absolute;left: 50px;width: 45px;"><div style="position: absolute;left:100px;width: 90%;" id="liVoucherGLF"><font style="float: left">', file.name, '</font><div class="fa fa-times" id="delete1" style="cursor: pointer;color:#428bca;border: 0;position: absolute;right: 20%;font-size:13px;padding:0;"> </div> <div style="border-radius: 10px;background:#EBEBEB;width: 75%;height:8px;margin-top:25px;">  <div id="progressNumber" style="border-radius: 10px;background:#A0D468;width:0%;height:8px" ></div></div><font id="percent" style="float:left;padding-top: 5px;">0% done</font><div class="button" style="cursor: pointer;border: 0;position: absolute;top: 65px;left: -10%;font-size:13px;padding:5px;"  id="delete2">cancel</div><div id="loadVoucher" class="button" style="cursor: pointer;border: 0;position: absolute;top: 65px;right: 15%;font-size:13px;padding:5px;" >upload</div></div>' );
-		document.getElementById('list').innerHTML = output.join('');
-		 var x = document.getElementsByClassName("upload-ticket");
-         x[0].style.padding = "0px 0px 120px 0px";
-		$("#delete1").click(function () {var file = null; var output = []; document.getElementById('list').innerHTML = output.join('');
-										 var x = document.getElementsByClassName("upload-ticket");
-         x[0].style.padding = "0px 0px 50px 0px";});
-		$("#delete2").click(function () {var file = null; var output = [];document.getElementById('list').innerHTML = output.join('');var x = document.getElementsByClassName("upload-ticket");
-         x[0].style.padding = "0px 0px 50px 0px";});
-			
-		
-		$("#loadVoucher").click(function () {
-			var form = document.forms["uploadForm"]; 
-    		if (form["file"].files.length > 0) { 
-					var file = form["file"].files[0]; 
-// try sending 
-						var reader = new FileReader(); 
- 						reader.onloadstart = function() { 
-// 这个事件在读取开始时触发
-						console.log("onloadstart"); 
-						document.getElementById("bytesTotal").textContent = file.size; 
-						} 
-						reader.onprogress = function(p) { 
-// 这个事件在读取进行中定时触发
-						console.log("onprogress"); 
-						 var percentComplete = Math.round((p.loaded) * 100/ file.size);
-						document.getElementById("percent").textContent=percentComplete + "%";
-                        document.getElementById("progressNumber").style.width=percentComplete+"%";   
-						} 
- 
-						reader.onload = function() { 
-   // 这个事件在读取成功结束后触发
-						console.log("load complete"); 
-						} 
-						reader.onloadend = function() { 
-   // 这个事件在读取结束后，无论成功或者失败都会触发
-							if (reader.error) { 
-								console.log(reader.error); 
-							} else { 
-								document.getElementById("drop").textContent="";
-								document.getElementById("drop_zone").style.border="2px dashed white";
-								 //$("#exportVoucher").append("<a style='padding:5px' href='http://10.66.57.171:8080/report/pdf/voucher?fileName="data+"&companyType="+$("#company").val()+"&builderName="+$("#builderName").val()+"'>export</a>");
-								} 
-						} 
-						reader.readAsBinaryString(file); 
-			} else { 
-			alert ("Please choose a file."); 
-			} 
-				
-				var filet = document.getElementById("file").files[0];
-				var formData = new FormData();
-       //formData.append("data",JSON.stringify(obj));
-       			formData.append("file",filet);
-				console.log(formData.get("file"))
-//var file = $('#uploadForm')[0];
-       //var formData = new FormData($('#uploadForm')[0]);
-//formData.append("fileName",file);
-       $.ajax({
-           type: 'post',
-           url: "http://10.66.57.171:8080/file/gLFileUpload",
-           data: formData,
-           cache: false,
-           processData: false,
-           contentType: false,
-       }).success(function (data) {
-		   document.getElementById("percent").textContent = "completed"; 
-		document.getElementById("progressNumber").style.width="100%";
-		   $("#progressNumber").append("<i class='fa fa-check' style='color: #A0D468;border: 0;position: absolute;right: 16%;font-size:12px;padding:0;top: 22px;'>");
-		   $("#delete1").remove();
-		   $("#loadVoucher").remove();
-		   $("#drop_zone").append("<img src='images/download.png' style='width:64px;padding-top:20px'><div style='color:#aaa;padding: 40px 0px;font-size: 20px;'>You can download the file now!</div>");
-		   $("#liVoucherGLF").append("<div class='button' style='cursor: pointer;border: 0;position: absolute;top: 65px;right: 15%;font-size:13px;padding:5px;background:#4FC1E9' id='exportVoucher'><a style='color:white' href='http://10.66.57.171:8080/report/pdf/voucher?fileName="+data+"&companyType="+$("#company").val()+"&builderName="+$("#builderName").val()+"'>export</a><div>")
-		   //$("#exportVoucher").append("sdfsd");
-       }).error(function () {
-           alert("上传失败");
-       });
-  });
-
-});
-	
-	
-	
-	$("#fileForglSubledger").on("change", function(e) {
-		var file = e.target.files[0]; 
-		console.log(file);
-		var output = [];
- 		output.push('<img src="images/microsoft.png" style="position:absolute;left:50px;width: 40px;top:300px"><div style="position: absolute;left:100px;width:90%;top:300px"  id="liSubGLF"><font style="float: left">', file.name, '</font><div class="fa fa-times" id="delete3" style="cursor: pointer;color:#428bca;border: 0;position: absolute;right: 20%;font-size:13px;padding:0;"> </div> <div style="border-radius: 10px;background:#EBEBEB;width:75%;height: 6px;margin-top:25px;">  <div id="progressNumber2" style="border-radius: 10px;background:#8DDD7D;width:0%;height:6px" ></div></div><font id="percent2" style="float:left;padding-top: 5px;">0% done</font>' );
-		document.getElementById('listForglSubledger').innerHTML = output.join('');
-		document.getElementById("upload-ticket").style.height="500px";
-		$("#delete3").click(function () {
-			$("#fileForglSubledger").val("");
-		console.log(file);
-			var output = []; 
-			var form = document.forms["upForglSubledger"]; 
-			form.firstChild.files.length = 0;
-			document.getElementById('listForglSubledger').innerHTML = output.join('');
-			
-         });		
-	});
-		
-	
-		$("#fileForblSubledger").on("change", function(e) {
-		var file = e.target.files[0]; 
-		console.log(file);
-		var output = [];
- 		output.push('<img src="images/microsoft.png" style="position:absolute;left:50px;width: 40px;"><div style="position: absolute;left: 100px;width: 90%;" id="liSubBLF"><font style="float: left">', file.name, '</font><div class="fa fa-times" id="delete4" style="cursor: pointer;color:#428bca;border: 0;position: absolute;right: 20%;font-size:13px;padding:0;"> </div> <div style="border-radius: 10px;background:#EBEBEB;width:75%;height: 6px;margin-top:25px;">  <div id="progressNumber1" style="border-radius: 10px;background:#8DDD7D;width:0%;height:6px" ></div></div><font id="percent1" style="float:left;padding-top: 5px;">0% done</font><div class="button" style="cursor: pointer;border: 0;position: absolute;top: 65px;left: -10%;font-size:13px;padding:5px;"  id="delete5">cancel</div><div id="loadSub" class="button" style="cursor: pointer;border: 0;position: absolute;top: 65px;right: 15%;font-size:13px;padding:5px;" >upload</div></div>' );
-		document.getElementById('listForblSubledger').innerHTML = output.join('');
-		document.getElementById("upload-ticket").style.height= "500px";
-		$("#delete4").click(function () {var file = null; var output = []; document.getElementById('listForblSubledger').innerHTML = output.join('');var x = document.getElementsByClassName("upload-ticket");x[1].style.height = "400px";});
-		$("#delete5").click(function () {var file = null; var output = []; document.getElementById('listForblSubledger').innerHTML = output.join('');document.getElementById('listForglSubledger').innerHTML = output.join('');var x=document.getElementsByClassName("upload-ticket");x[1].style.height = "350px";});
-		
-			
-			$("#loadSub").click(function () {
-			var form = document.forms["upForglSubledger"]; 
-			var form1 = document.forms["upForblSubledger"];
-    		if (form["fileForglSubledger"].files.length > 0) {
-						var file1 = form["fileForglSubledger"].files[0]; 
-// try sending 
-						var reader = new FileReader(); 
- 						reader.onloadstart = function() { 
-// 这个事件在读取开始时触发
-						console.log("onloadstart"); 
-						document.getElementById("bytesTotal").textContent = file1.size; 
-						} 
-						reader.onprogress = function(p) { 
-// 这个事件在读取进行中定时触发
-						console.log("onprogress"); 
-						 var percentComplete = Math.round((p.loaded) * 100/ file1.size);
-						document.getElementById("percent2").textContent=percentComplete + "%";
-                        document.getElementById("progressNumber2").style.width=percentComplete+"%";   
-						} 
- 
-						reader.onload = function() { 
-   // 这个事件在读取成功结束后触发
-						console.log("load complete"); 
-						} 
-						reader.onloadend = function() { 
-   // 这个事件在读取结束后，无论成功或者失败都会触发
-							if (reader.error) { 
-								console.log(reader.error); 
-							} else { 
-								document.getElementById("drop_zone1").textContent="";
-								document.getElementById("drop_zone1").style.border="0";
-								//document.getElementById("delete2").style.backgroundColor="#A0D468";
-								 //$("#exportVoucher").append("<a style='padding:5px' href='http://10.66.57.171:8080/report/pdf/voucher?fileName="+data+"&companyType="+$("#company").val()+"&builderName="+$("#builderName").val()+"'>export</a>");
-								} 
-						} 
-						reader.readAsBinaryString(file1); 
-								
-				var file1 = document.getElementById("fileForglSubledger").files[0];
-				var formData = new FormData();
-       //formData.append("data",JSON.stringify(obj));
-       			formData.append("file",file1);
-				console.log(formData.get("file"))
-//var file = $('#uploadForm')[0];
-       //var formData = new FormData($('#uploadForm')[0]);
-//formData.append("fileName",file);
-       $.ajax({
-           type: 'post',
-           url: "http://10.66.57.171:8080/file/gLFileUpload",
-           data: formData,
-           cache: false,
-           processData: false,
-           contentType: false,
-       }).success(function (data) {
-
-		  document.getElementById("percent2").textContent = "completed"; 
-		  document.getElementById("progressNumber2").style.width="100%";
-		   $("#progressNumber2").append("<i class='fa fa-check' style='color: #A0D468;border: 0;position: absolute;right: 16%;font-size:12px;padding:0;top: 22px;'>");
-		   $("#delete3").remove();
-		   //$("#exportVoucher").append("sdfsd");
-       }).error(function () {
-           alert("上传失败");
-       });
-  
-				
-				
-				
-						if (form1["fileForblSubledger"].files.length > 0) { 
-							var file = form1["fileForblSubledger"].files[0]; 
-							var reader = new FileReader(); 
- 							reader.onloadstart = function() { 
-								console.log("onloadstart"); 
-								document.getElementById("bytesTotal").textContent = file.size; 
-							} 
-							reader.onprogress = function(p) { 
-								console.log("onprogress"); 
-								var percentComplete = Math.round((p.loaded) * 100/ file.size);
-								document.getElementById("percent1").textContent=percentComplete + "%";
-                        		document.getElementById("progressNumber1").style.width=percentComplete+"%";   
-							} 
- 							reader.onload = function() { 
-  								console.log("load complete"); 
-							} 
-							reader.onloadend = function() { 
-								if (reader.error) { 
-									console.log(reader.error); 
-								} else { 
-									
-									document.getElementById("drop_zone2").textContent="";
-									document.getElementById("drop_zone2").style.border="0";
-									} 
-								} 
-							reader.readAsBinaryString(file); 
-							} }
-						else { 
-							alert ("Please choose a file."); 
-						} 
-						
-
-				
-				var file2 = document.getElementById("fileForblSubledger").files[0];
-				var formData = new FormData();
-       //formData.append("data",JSON.stringify(obj));
-       			formData.append("file",file2);
-				console.log(formData.get("file"))
-//var file = $('#uploadForm')[0];
-       //var formData = new FormData($('#uploadForm')[0]);
-//formData.append("fileName",file);
-       $.ajax({
-           type: 'post',
-           url: "http://10.66.57.171:8080/file/balanceFileUpload",
-           data: formData,
-           cache: false,
-           processData: false,
-           contentType: false,
-       }).success(function (data) {
-		    var name=$("#liSubGLF").find("font").html();
-		   document.getElementById("percent1").textContent = "completed"; 
-									document.getElementById("progressNumber1").style.width="100%";
-		   $("#progressNumber1").append("<i class='fa fa-check' style='color: #A0D468;border: 0;position: absolute;right: 16%;font-size:12px;padding:0;top: 22px;'>");
-									$("#delete4").remove();
-									$("#loadSub").remove();
-		   $("#top").append("<div style='position: absolute;top: 85px;text-align: center;right: 0px;left: 0px;'><img src='images/download.png' style='width:64px;padding-top:20px'><div style='color:#aaa;padding: 40px 0px;font-size: 20px;'>You can download the file now!</div></div>")
-		   
-		   $("#liSubBLF").append("<div class='button' style='cursor: pointer;border: 0;position: absolute;top: 65px;right: 15%;font-size:13px;padding:5px;background:#4FC1E9' id='exportVoucher'><a style='color:white' href='http://10.66.57.171:8080/report/pdf/subledger?glfileName="+name+"&balanceFileName="+data+"&companyType="+$("#company").val()+"'>export</a><div>")
-		   //$("#exportVoucher").append("sdfsd");
-       }).error(function () {
-           alert("上传失败");
-       });
-  
-});
-		});
-	
-		
-			
-
-	
-
-
-					
-					
-</script>
-			
 </html>

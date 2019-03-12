@@ -1,5 +1,6 @@
 package com.decathlon.finance.taxreport.service.impl;
 
+import com.decathlon.finance.taxreport.config.CustomConfigUtils;
 import com.decathlon.finance.taxreport.model.*;
 import com.decathlon.finance.taxreport.service.FiscalInfoService;
 import com.decathlon.finance.taxreport.service.PersonInfoService;
@@ -44,6 +45,9 @@ import java.util.*;
 public class ReportServiceImpl implements ReportService {
 
     @Autowired
+    private CustomConfigUtils config;
+
+    @Autowired
     StoreInfoService storeInfoService;
 
     @Autowired
@@ -63,6 +67,7 @@ public class ReportServiceImpl implements ReportService {
         {
             List lst = generateVoucher(is2003,glIs,companyType, builderName);
             JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(lst);
+//            InputStream inputStream = getClass().getResourceAsStream(config.getPath()+Constants.JRXML_VOUCHER);
             InputStream inputStream = getClass().getResourceAsStream(Constants.JRXML_VOUCHER);
             httpEntity = generate(dataSource,inputStream,Constants.REPORT_TYPE_VOUCHER);
         }
@@ -436,10 +441,6 @@ public class ReportServiceImpl implements ReportService {
                 String itemPageInfo = s.getCode()+s.getYear()+s.getMonth();
                 if(!tempPageInfo.equals(itemPageInfo))
                 {
-                    if(s.getCode() .equals("901460"))
-                    {
-                        int a = 2;
-                    }
                     if(tempPageInfo!="")
                     {
                         SubledgerItem lastRecord = new SubledgerItem("","","","",Constants.STATIC_TEXT_TOTAL_SUBLEDGER,twoDf.format(totalBorrow),twoDf.format(totalLoan),"",twoDf.format(Math.abs(balance)));

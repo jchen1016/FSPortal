@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.decathlon.finance.taxreport.mapper.PersonInfoMapper" >
-  <resultMap id="BaseResultMap" type="com.decathlon.finance.taxreport.model.PersonInfo" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="manager_name" property="managerName" jdbcType="VARCHAR" />
-    <result column="recheck_name" property="recheckName" jdbcType="VARCHAR" />
-    <result column="builder_name" property="builderName" jdbcType="VARCHAR" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.decathlon.finance.taxreport.mapper.PersonInfoMapper">
+  <resultMap id="BaseResultMap" type="com.decathlon.finance.taxreport.model.PersonInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="manager_name" jdbcType="VARCHAR" property="managerName" />
+    <result column="recheck_name" jdbcType="VARCHAR" property="recheckName" />
+    <result column="builder_name" jdbcType="VARCHAR" property="builderName" />
   </resultMap>
-  <sql id="Base_Column_List" >
+  <sql id="Base_Column_List">
     id, manager_name, recheck_name, builder_name
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_person_info
@@ -21,63 +21,63 @@
     <include refid="Base_Column_List" />
     from t_person_info
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_person_info
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.decathlon.finance.taxreport.model.PersonInfo" >
+  <insert id="insert" parameterType="com.decathlon.finance.taxreport.model.PersonInfo">
     insert into t_person_info (id, manager_name, recheck_name, 
       builder_name)
     values (#{id,jdbcType=INTEGER}, #{managerName,jdbcType=VARCHAR}, #{recheckName,jdbcType=VARCHAR}, 
       #{builderName,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.decathlon.finance.taxreport.model.PersonInfo" >
+  <insert id="insertSelective" parameterType="com.decathlon.finance.taxreport.model.PersonInfo">
     insert into t_person_info
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         id,
       </if>
-      <if test="managerName != null" >
+      <if test="managerName != null">
         manager_name,
       </if>
-      <if test="recheckName != null" >
+      <if test="recheckName != null">
         recheck_name,
       </if>
-      <if test="builderName != null" >
+      <if test="builderName != null">
         builder_name,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="managerName != null" >
+      <if test="managerName != null">
         #{managerName,jdbcType=VARCHAR},
       </if>
-      <if test="recheckName != null" >
+      <if test="recheckName != null">
         #{recheckName,jdbcType=VARCHAR},
       </if>
-      <if test="builderName != null" >
+      <if test="builderName != null">
         #{builderName,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.decathlon.finance.taxreport.model.PersonInfo" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.decathlon.finance.taxreport.model.PersonInfo">
     update t_person_info
-    <set >
-      <if test="managerName != null" >
+    <set>
+      <if test="managerName != null">
         manager_name = #{managerName,jdbcType=VARCHAR},
       </if>
-      <if test="recheckName != null" >
+      <if test="recheckName != null">
         recheck_name = #{recheckName,jdbcType=VARCHAR},
       </if>
-      <if test="builderName != null" >
+      <if test="builderName != null">
         builder_name = #{builderName,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.decathlon.finance.taxreport.model.PersonInfo" >
+  <update id="updateByPrimaryKey" parameterType="com.decathlon.finance.taxreport.model.PersonInfo">
     update t_person_info
     set manager_name = #{managerName,jdbcType=VARCHAR},
       recheck_name = #{recheckName,jdbcType=VARCHAR},

@@ -1,5 +1,6 @@
 package com.decathlon.finance.taxreport.controller;
 
+import com.decathlon.finance.taxreport.config.CustomConfigUtils;
 import com.decathlon.finance.taxreport.service.FileService;
 import com.decathlon.finance.taxreport.service.HttpRequestService;
 import com.decathlon.finance.taxreport.util.Constants;
@@ -16,9 +17,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @RestController
-@RequestMapping(value = "/file")
+@RequestMapping(value = "/api/file")
 @Api(value = "FileController", description = "file operation")
 public class FileController {
+
+    @Autowired
+    private CustomConfigUtils config;
 
     @Autowired
     private FileService fileService;
@@ -37,7 +41,8 @@ public class FileController {
     @ResponseBody
     @ApiOperation(value = "getRequest", notes = "getRequest", httpMethod = "GET")
     public String glFileUpload(@RequestParam String country) throws IOException {
-        String url = "https://api-eu.subsidia.org/search-api/v1/people/search?country="+country+"&fields=ldap_uid&range=startPage-endPage";
+        //String url = "https://api-eu.subsidia.org/search-api/v1/people/search?country="+country+"&fields=ldap_uid&range=startPage-endPage";
+        String url = " https://api-eu.decathlon.net//search-api/v1/people/search?country=CN";
         HttpMethod method =HttpMethod.GET;
         return httpRequestService.client(url,method,null);
     }
@@ -47,16 +52,16 @@ public class FileController {
     @RequestMapping(value = "balanceFileUpload", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "balanceFileUpload", notes = "balanceFileUpload", httpMethod = "POST")
-    public String balanceFileUpload(@RequestParam("file") MultipartFile file) throws IOException {
-        return fileService.fileUpload(file,Constants.SRC_FOLDER_BL);
+    public String balanceFileUpload(@RequestParam("file") MultipartFile file) throws IOException, InterruptedException {
+        return fileService.fileUpload(file,config.getPath()+Constants.SRC_FOLDER_BL,Constants.FILE_BL,true);
     }
 
     @CrossOrigin
     @RequestMapping(value = "gLFileUpload", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "gLFileUpload", notes = "gLFileUpload", httpMethod = "POST")
-    public String gLFileUpload(@RequestParam("file") MultipartFile file) throws IOException {
-        return fileService.fileUpload(file,Constants.SRC_FOLDER_GL);
+    public String gLFileUpload(@RequestParam("file") MultipartFile file) throws IOException, InterruptedException {
+        return fileService.fileUpload(file,config.getPath()+Constants.SRC_FOLDER_GL,Constants.FILE_GL,true);
     }
 
 
@@ -71,8 +76,12 @@ public class FileController {
         return "successfully";
     }
 
-    //Test for raed pdf content.
-    //@RequestMapping(value="readPdf", method =  RequestMethod.GET)
 
-
+    @CrossOrigin
+    @RequestMapping(value = "exfeFileUpload", method = RequestMethod.POST)
+    @ResponseBody
+    @ApiOperation(value = "exfeFileUpload", notes = "exfeFileUpload", httpMethod = "POST")
+    public String exfeFileUpload(@RequestParam("file") MultipartFile file,@RequestParam String profile) throws IOException, InterruptedException {
+        return fileService.fileUpload(file,config.getPath()+Constants.SRC_EXACTINENTRY_FOLDER+profile+"/",null,false);
+    }
 }
